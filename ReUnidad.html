@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Operadores</title>
+    <title>Registro Unidades</title>
     <link rel="icon" href="image/delivery.png" type="image/png" size="64x64">
     <script src="vendor/jquery/jquery.slim.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/styleReOperador.css">
+    <link rel="stylesheet" href="css/styleReUnidad.css">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <div class="container col-auto bg-dark">
         <nav class="navbar navbar-expand-lg m-0 p-0 navbar-light">
@@ -41,14 +41,14 @@
 <body class="body">
     <div class="container">
         <div class="mt-0 text-white">
-            <h2 class=" text-center p-0">Registro de Operadores</h2>
+            <h2 class=" text-center p-0">Registro de Unidades</h2>
         </div>
         <div class="row">
             <form action="" class="p-3 m-0 col-12">
                 <div class="col-12 p-0 text-center">
                     <div class="pt-5 col-4 float-right">
                         <div class=" form-group row-1 col-1 pl-5 ml-lg-5">
-                            <img src="/image/user.png" width="150px" height="150px" class="" alt=" no se ha podido cargar la imagen">
+                            <img src="/image/delivery.png" width="150px" height="150px" class="" alt=" no se ha podido cargar la imagen">
                         </div>
                         <div class="form-group row-1 pt-2 text-white">
                             <label for="picture">Agregar imagen: </label>
@@ -56,47 +56,59 @@
                         </div>
                     </div>
                     <div class="form-group col-4">
-                        <label for="Nombre" class="mr-2 text-white text-left">Nombre: </label>
-                        <input type="text" id="Nombre" class=" form-control-sm float-right" placeholder="Nombre">
+                        <label for="Marca" class="mr-2 text-white text-left">Marca: </label>
+                        <input type="text" id="Marca" class=" form-control-sm float-right" placeholder="Marca">
                     </div>
                     <div class="form-group col-4">
-                        <label for="Apeliido" class="mr-2 text-white text-left">Apellido: </label>
-                        <input type="text" id="Apellido" class=" form-control-sm float-right" placeholder="Apellido">
+                        <label for="Modelo" class="mr-2 text-white text-left">Modelo: </label>
+                        <input type="text" id="Modelo" class=" form-control-sm float-right" placeholder="Modelo">
                     </div>
                     <div class="form-group col-4">
-                        <label for="NSS" class="mr-2 text-white text-left">NSS: </label>
-                        <input type="text" id="NSS" class=" form-control-sm float-right" placeholder="NSS">
+                        <label for="Placas" class="mr-2 text-white text-left">Placas: </label>
+                        <input type="text" id="Placas" class=" form-control-sm float-right" placeholder="Placas">
                     </div>
                     <div class="form-group col-4">
-                        <label for="RFC" class="mr-2 text-white text-left">RFC: </label>
-                        <input type="text" id="RFC" class=" form-control-sm float-right" placeholder="RFC">
+                        <label for="Identificador" class="mr-2 text-white text-left">Identificador: </label>
+                        <input type="text" id="Identificador" class=" form-control-sm float-right" placeholder="Identificador">
                     </div>
                     <div class="form-group col-4">
-                        <label for="NumLicencia" class="mr-2 text-white text-left">Num. Licencia: </label>
-                        <input type="text" id="NumLicencia" class=" form-control-sm float-right" placeholder="Num.  Licencia">
+                        <label for="NumSerie" class="mr-2 text-white text-left">Num. Serie: </label>
+                        <input type="text" id="NumSerie" class=" form-control-sm float-right" placeholder="Num.  Serie">
                     </div>
                     <div class="form-group col-4">
-                        <label for="tipo" class="mr-2 text-white text-left">Tipo licencia: </label>
-                        <select class=" form-control-sm col-6 float-right" id="exampleFormControlSelect1">
-                          <option>A</option>
-                          <option>B</option>
-                          <option>C</option>
-                        </select>
+                        <label for="ConfiguracionEje" class="mr-2 text-white text-left">Configuracion de ejes: </label>
+                        <input type="text" id="ConfiguracionEje" class=" form-control-sm float-right" placeholder="Configuracion de ejes">
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="Largo" class="mr-2 text-white text-left">Largo: </label>
+                        <input type="text" id="Largo" class=" form-control-sm float-right" placeholder="Largo">
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="Alto" class="mr-2 text-white text-left">Alto: </label>
+                        <input type="text" id="Alto" class=" form-control-sm float-right" placeholder="Alto">
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="Alto" class="mr-2 text-white text-left">Alto: </label>
+                        <input type="text" id="Alto" class=" form-control-sm float-right" placeholder="Alto">
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="Ancho" class="mr-2 text-white text-left">Ancho: </label>
+                        <input type="text" id="Ancho" class=" form-control-sm float-right" placeholder="Ancho">
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="PesoB" class="mr-2 text-white text-left">Peso bruto Maximo: </label>
+                        <input type="text" id="PesoB" class=" form-control-sm float-right" placeholder="Peso bruto Maximo">
+                    </div>
+                    <div class="col-2 pt-0">
+                        <div class="form-check">
+                            <label class="mr-2 text-white text-left " for="gridCheck">Refrigerado: </label>
+                          <input class="form-check-input float-right col-4" type="checkbox" id="gridCheck">
+                          <label class="form-check-label col-3 text-white" for="gridCheck">
+                            Si
+                          </label>
+                        </div>
                       </div>
-                    <div class="form-group col-4">
-                        <label for="Direccion" class="mr-2 text-white text-left">Direccion: </label>
-                        <input type="text" id="Direccion" class=" form-control-sm float-right" placeholder="Direccion">
-                    </div>
-                    <div class="form-group col-4">
-                        <label for="password" class="mr-2 text-white text-left">Contraseña: </label>
-                        <input type="password" id="password" class=" form-control-sm float-right" placeholder="Contraseña">
-                    </div>
-                    <div class="form-group col-4">
-                        <label for="ConPassword" class="mr-2 text-white text-left">Confirmar contraseña: </label>
-                        <input type="password" id="ConPassword" class=" form-control-sm float-right" placeholder="Confirmar contraseña">
-                    </div>  
                 </div> 
-                
                 <div class="col-12">
                 </div>
                 <div class="form-group mb-0">
