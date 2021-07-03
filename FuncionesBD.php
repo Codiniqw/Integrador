@@ -33,3 +33,19 @@ function ValidateUser($user, $password)
         die('Exception capturada: ' . $e->getMessage()); //atrapa el error en caso de que no se pueda realizar
     }
 }
+
+function addOperador($RFC, $nombre, $Apellidos, $NSS, $Num_Licencia, $Vigencia, $tipo_licencia, $password, $foto)
+{
+    $insert = "insert into operador(RFC,Foto,NSS,password,nombre,apellidos,tipo_licencia,numero_licencia,vigencia) values ('$RFC','$foto','$NSS','$password','$nombre','$Apellidos','$tipo_licencia','$Num_Licencia','$Vigencia')";
+    $conection = connect();
+    try {
+        mysqli_query($conection, $insert);
+        return 1;
+    } catch (Exception $e) {
+        die('Excepcion Capturada: ' . $e->getMessage());
+    }
+}
+
+function searchOperador($RFC){
+    
+}
