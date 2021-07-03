@@ -23,13 +23,13 @@
             <a class="nav-link text-light active text-center" href="#">Informes</a>
           </li>
           <li class="nav-item col-lg-5">
-            <a class="nav-link text-light text-center" href="#">Registrar operador</a>
+            <a class="nav-link text-light text-center" href="registroOP.php">Registrar operador</a>
           </li>
           <li class="nav-item col-lg-5 text-center">
-            <a class="nav-link text-light" href="#">Registrar Unidad</a>
+            <a class="nav-link text-light" href="registroUnidad.php">Registrar Unidad</a>
           </li>
           <li class="nav-item col-lg-5 text-center">
-            <a class="nav-link text-light" href="#">Asignar Viajes</a>
+            <a class="nav-link text-light" href="asignar_viaje.php">Asignar Viajes</a>
           </li>
           <li class="nav-item col-lg-4 text-right">
             <a class="nav-link text-light" href="index.php">Salir</a>
@@ -111,10 +111,10 @@
           <button type="submit" name="Agregar" class="btn btn-sm btn-success p-1 col-0" id="Agregar">
             agregar
           </button>
-          <button type="submit" name="Eliminar" class="btn btn-sm btn-danger p-1" id="Eliminar">
+          <button type="submit" name="Eliminar" class="btn btn-sm btn-danger p-1" id="Eliminar" disabled>
             Eliminar
           </button>
-          <button type="submit" name="Actualizar" class="btn btn-sm btn-warning p-1" id="Actualizar">
+          <button type="submit" name="Actualizar" class="btn btn-sm btn-warning p-1" id="Actualizar" disabled>
             Actualizar
           </button>
         </div>

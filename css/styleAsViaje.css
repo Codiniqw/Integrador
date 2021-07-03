@@ -1,21 +1,21 @@
-.body {
-    background-image: url(/image/1860x1050-R2A8182.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+body {
+  background-image: url(../image/1860x1050-R2A8182.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-form{
-    background: #00000044;
-    box-shadow: 1px 2px 2px #beb7b7bb;
-    border-radius: 10px;
+#formAsignarviaje {
+  background: #00000044;
+  box-shadow: 1px 2px 2px #beb7b7bb;
+  border-radius: 10px;
 }
-hr{
-    background:#fff;
-    height: 2px;
-    padding: 0 0 0 0;
-    margin: 0 0 0 0;
+hr {
+  background: #fff;
+  height: 2px;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
 }
-.form-enviar{
-    width: 400px;
-    height: 630px;
-    margin: auto;
+.form-enviar {
+  width: 400px;
+  height: 630px;
+  margin: auto;
 }
