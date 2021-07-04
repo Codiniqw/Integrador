@@ -40,12 +40,22 @@ function addOperador($RFC, $nombre, $Apellidos, $NSS, $Num_Licencia, $Vigencia, 
     $conection = connect();
     try {
         mysqli_query($conection, $insert);
+        mysqli_close($conection);
         return 1;
     } catch (Exception $e) {
         die('Excepcion Capturada: ' . $e->getMessage());
     }
 }
 
-function searchOperador($RFC){
-    
+function addUnidad($marca, $modelo, $placa, $Num_serie, $ejes, $largo, $ancho, $alto, $peso, $refrigerado, $foto)
+{
+    $insert = "insert into unidad values ('$marca','$modelo','$Num_serie','$ejes','$largo','$alto','$ancho','$peso',$refrigerado,'$foto','$placa')";
+    $conection = connect();
+    try {
+        mysqli_query($conection, $insert);
+        mysqli_close($conection);
+        return 1;
+    } catch (Exception $e) {
+        die('Excepcion Capturada: ' . $e->getMessage());
+    }
 }

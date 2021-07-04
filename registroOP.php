@@ -108,7 +108,7 @@
 
         <div class="col-12"></div>
         <div class="form-group mb-0">
-          <button type="submit" name="Agregar" class="btn btn-sm btn-success p-1 col-0" id="Agregar">
+          <button type="submit" name="AgregarOP" class="btn btn-sm btn-success p-1 col-0" id="Agregar">
             agregar
           </button>
           <button type="submit" name="Eliminar" class="btn btn-sm btn-danger p-1" id="Eliminar" disabled>
@@ -133,7 +133,7 @@
 
 
 <?php
-if (isset($_POST['Agregar'])) {
+if (isset($_POST['AgregarOP'])) {
   require "FuncionesBD.php";
   $RFC = $_POST['RFC'];
   $nombre = $_POST['Nombre'];
