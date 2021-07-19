@@ -40,15 +40,12 @@
         <a class="navbar-brand col-0 text-light" href="#">SRI-O</a>
         <div class="collapse navbar-collapse col-auto" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active col-10">
-              <a class="nav-link text-light active text-center" href="#"
-                >Inicio</a
-              >
+            <li class="nav-item active col-12">
+              <a class="nav-link text-light active text-center" href="#">Inicio</a>
             </li>
-            <li class="nav-item col-10 text-center">
-              <a class="nav-link text-light" href="#">Informes</a>
-            </li>
-            <li class="nav-item col-8 text-center">
+            <li class="nav-item col-12 text-center">
+              <a class="nav-link text-light" href="informes.php">Informes</a>
+            <li class="nav-item col-12 text-center">
               <a class="nav-link text-light" href="index.php">Salir</a>
             </li>
           </ul>
@@ -59,7 +56,7 @@
   <body>
     <div class="container">
       <h2 class="text-center text-white">Informes del operador</h2>
-      <div class="p-2 text-white text-center mb-2" id="encuadre">
+      <div class="p-2 text-white text-center mb-6" id="encuadre">
         <div class="row">
           <div class="datos col-4 float-left">
             <h3>datos</h3>

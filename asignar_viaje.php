@@ -20,18 +20,21 @@
       <div class="collapse navbar-collapse col-auto" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active col-sm-3">
-            <a class="nav-link text-light active text-center" href="#">Informes</a>
+            <a class="nav-link text-light active text-center" href="informes.php">Informes Administrador</a>
           </li>
-          <li class="nav-item col-lg-5">
+          <li class="nav-item col-lg-3">
             <a class="nav-link text-light text-center" href="registroOP.php">Registrar operador</a>
           </li>
-          <li class="nav-item col-lg-5 text-center">
+          <li class="nav-item col-lg-3 text-center">
             <a class="nav-link text-light" href="registroUnidad.php">Registrar Unidad</a>
           </li>
-          <li class="nav-item col-lg-5 text-center">
+          <li class="nav-item col-lg-3 text-center">
             <a class="nav-link text-light" href="asignar_viaje.php">Asignar Viajes</a>
           </li>
-          <li class="nav-item col-lg-4 text-right">
+          <li class="nav-item col-lg-3 text-center">
+            <a class="nav-link text-light" href="BitOperador.php">informes Operador</a>
+          </li>
+          <li class="nav-item col-lg-3 text-right">
             <a class="nav-link text-light" href="index.php">Salir</a>
           </li>
         </ul>
