@@ -23,7 +23,7 @@ function ValidateUser($user, $password)
         $arrayBD = mysqli_fetch_array($validation); //Convierte los datos obtenidos en cadena de texto
         mysqli_close($conex); //Termina la conexion con la BD
 
-        if (($numReg == 1) && ($password == $arrayBD['password'])  && (count_chars($password) >= 8)) { //if que valida que los datos sean iguales 
+        if (($numReg == 1) && ($password == $arrayBD['password'])  && (count_chars($password) >= 8)) { //if que valida que los datos sean iguales
             $status = 1;
         } else {
             $status = 0;
@@ -58,4 +58,17 @@ function addUnidad($marca, $modelo, $placa, $Num_serie, $ejes, $largo, $ancho, $
     } catch (Exception $e) {
         die('Excepcion Capturada: ' . $e->getMessage());
     }
+}
+//viajes
+function consultarviaje()
+{
+    $conex = connect();
+    $select = "select * from  viajes"
+    try {
+    $rsViaje=mysqli_query($conex,$select);
+    mysqli_close($conex);
+return $rsViaje;
+} catch (Exception $e) {
+    die('Exepcion capturada: ' .$e-> getMessage());
+}
 }
