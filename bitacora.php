@@ -59,8 +59,6 @@
                 </div>
                 <div class="form-group mb-0">
                     <button type="submit" name="AgregarUnidad" class="btn btn-sm btn-success p-1 col-0" id="Agregar">agregar</button>
-                    <button type="submit" name="Eliminar" class="btn btn-sm btn-danger p-1" id="Eliminar" disabled>Eliminar</button>
-                    <button type="submit" name="Actualizar" class="btn btn-sm btn-warning p-1" id="Actualizar" disabled>Actualizar</button>
                 </div>
                 <hr class="hr" />
                 <div class="p-0 ml-2 mb-0 row">
@@ -72,53 +70,6 @@
         </div>
     </div>
 </body>
-<?php
-if (isset($_POST['AgregarUnidad'])) {
-    require "FuncionesBD.php";
-    $marca = $_POST['marca'];
-    $modelo = $_POST['modelo'];
-    $numero_serie = $_POST['numero_serie'];
-    $ejes = $_POST['ejes'];
-    $placas = $_POST['placas'];
-    $alto = $_POST['alto'];
-    $ancho = $_POST['ancho'];
-    $largo = $_POST['largo'];
-    $peso = $_POST['peso'];
-    if (!empty($_POST['refrigerado'])) {
-        $refri = TRUE;
-    } else {
-        $refri = FALSE;
-    }
 
-
-    $image = $_FILES['picture1']['name'];
-    $tipo_imagen = $_FILES['picture1']['type'];
-    $tamaño_imagen = $_FILES['picture1']['size'];
-    $carpeta = $_SERVER['DOCUMENT_ROOT'] . '/Integrador/Unidades/';
-    $foto = "../Unidades/" . $image;
-
-    if ($tamaño_imagen <= 3000000) {
-        if ($tipo_imagen == "image/jpeg" || $tipo_imagen == "image/jpg" || $tipo_imagen == "image/png") {
-            $status = addUnidad($marca, $modelo, $placas, $numero_serie, $ejes, $largo, $ancho, $alto, $peso, $refri, $foto);
-            if ($status == 1) {
-                echo "<script>alert('Se ha realizado el registro de Unidad correctamente ');</script>";
-                move_uploaded_file($_FILES['picture1']['tmp_name'], $carpeta . $image);
-            } else {
-                echo "<script>alert('No se ha podido realizar el registro de Unidad ');</script>";
-            }
-        } else {
-            echo "<script>alert('La el archivo que intenta subir no es una imagen'); </script>";
-        }
-    } else {
-        echo "<script>alert('La iamgen que intenta subir es demasiado grande ');</script>";
-    }
-}
-
-
-if (isset($_GET['buscarOP'])) {
-    $buscar = $_POST['buscador'];
-}
-
-?>
 
 </html>
