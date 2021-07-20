@@ -19,22 +19,22 @@
       <a class="navbar-brand col-0 text-light" href="#">SRI-A</a>
       <div class="collapse navbar-collapse col-auto" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active col-sm-3">
+          <li class="nav-item active col-auto">
             <a class="nav-link text-light active text-center" href="#">Informes Administrador</a>
           </li>
-          <li class="nav-item col-lg-3">
+          <li class="nav-item col-auto">
             <a class="nav-link text-light text-center" href="registroOP.php">Registrar operador</a>
           </li>
-          <li class="nav-item col-lg-3 text-center">
+          <li class="nav-item col-auto text-center">
             <a class="nav-link text-light" href="registroUnidad.php">Registrar Unidad</a>
           </li>
-          <li class="nav-item col-lg-3 text-center">
+          <li class="nav-item col-auto text-center">
             <a class="nav-link text-light" href="asignar_viaje.php">Asignar Viajes</a>
           </li>
-          <li class="nav-item col-lg-3 text-center">
+          <li class="nav-item col-auto text-center">
             <a class="nav-link text-light" href="BitOperador.php">Informes Operador</a>
           </li>
-          <li class="nav-item col-lg-3 text-right">
+          <li class="nav-item col-auto text-center">
             <a class="nav-link text-light" href="index.php">Salir</a>
           </li>
         </ul>

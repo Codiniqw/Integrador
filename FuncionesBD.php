@@ -63,12 +63,12 @@ function addUnidad($marca, $modelo, $placa, $Num_serie, $ejes, $largo, $ancho, $
 function consultarviaje()
 {
     $conex = connect();
-    $select = "select * from  viajes"
-    try {
+    $select = "select * from  viajes";
+    try{
     $rsViaje=mysqli_query($conex,$select);
     mysqli_close($conex);
-return $rsViaje;
-} catch (Exception $e) {
+    return $rsViaje;
+    } catch (Exception $e) {
     die('Exepcion capturada: ' .$e-> getMessage());
 }
 }

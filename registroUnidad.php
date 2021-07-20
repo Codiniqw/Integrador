@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <div class="container col-auto bg-dark">
+    <div class=" bg-dark">
         <nav class="navbar navbar-expand-lg m-0 p-0 navbar-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -19,22 +20,22 @@
             <a class="navbar-brand col-0 text-light" href="#">SIR-A</a>
             <div class="collapse navbar-collapse col-auto" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active col-sm-3">
-                        <a class="nav-link text-light active text-center" href="informes.php">Informes Administrador</a>
+                    <li class="nav-item active col-auto">
+                        <a class="nav-link text-light text-center" href="informes.php">Informes Administrador</a>
                     </li>
-                    <li class="nav-item col-lg-3">
+                    <li class="nav-item col-auto">
                         <a class="nav-link text-light text-center" href="registroOP.php">Registrar operador</a>
                     </li>
-                    <li class="nav-item col-lg-3 text-center">
+                    <li class="nav-item col-auto text-center">
                         <a class="nav-link text-light" href="registroUnidad.php">Registrar Unidad</a>
                     </li>
-                    <li class="nav-item col-lg-3 text-center">
+                    <li class="nav-item col-auto text-center">
                         <a class="nav-link text-light" href="BitOperador.php">Informes Operador</a>
                     </li>
-                    <li class="nav-item col-lg-3 text-center">
+                    <li class="nav-item col-auto text-center">
                         <a class="nav-link text-light" href="asignar_viaje.php">Asignar Viajes</a>
                     </li>
-                    <li class="nav-item col-lg-3 text-right">
+                    <li class="nav-item col-auto text-center">
                         <a class="nav-link text-light" href="index.php">Salir</a>
                     </li>
                 </ul>
@@ -57,49 +58,49 @@
                         </div>
                         <div class="form-group row-1 pt-2 text-white">
                             <label for="picture1">Agregar imagen: </label>
-                            <input type="file" name="picture1" class="form-control bg-transparent text-white" id="picture1" required>
+                            <input type="file" name="picture1" class="form-control bg-transparent text-white" id="picture1">
                         </div>
                     </div>
                     <div class="form-group col-4">
                         <label for="Marca" class="mr-2 text-white text-left">Marca: </label>
-                        <input type="text" id="Marca" name="marca" class=" form-control-sm float-right" placeholder="Marca" required>
+                        <input type="text" id="Marca" name="marca" class=" form-control-sm float-right" placeholder="Marca">
                     </div>
                     <div class="form-group col-4">
                         <label for="Modelo" class="mr-2 text-white text-left">Modelo: </label>
-                        <input type="text" id="Modelo" name="modelo" class=" form-control-sm float-right" placeholder="Modelo" required>
+                        <input type="text" id="Modelo" name="modelo" class=" form-control-sm float-right" placeholder="Modelo">
                     </div>
                     <div class="form-group col-4">
                         <label for="Placas" class="mr-2 text-white text-left">Placas: </label>
-                        <input type="text" id="Placas" name="placas" class=" form-control-sm float-right" placeholder="Placas" required>
+                        <input type="text" id="Placas" name="placas" class=" form-control-sm float-right" placeholder="Placas">
                     </div>
                     <div class="form-group col-4">
                         <label for="NumSerie" class="mr-2 text-white text-left">Num. Serie: </label>
-                        <input type="text" id="NumSerie" name="numero_serie" class=" form-control-sm float-right" placeholder="Num.  Serie" required>
+                        <input type="text" id="NumSerie" name="numero_serie" class=" form-control-sm float-right" placeholder="Num.  Serie">
                     </div>
                     <div class="form-group col-4">
                         <label for="ConfiguracionEje" class="mr-2 text-white text-left">Configuracion de ejes: </label>
-                        <input type="text" id="ConfiguracionEje" name="ejes" class=" form-control-sm float-right" placeholder="Configuracion de ejes" required>
+                        <input type="text" id="ConfiguracionEje" name="ejes" class=" form-control-sm float-right" placeholder="Configuracion de ejes">
                     </div>
                     <div class="form-group col-4">
                         <label for="Largo" class="mr-2 text-white text-left">Largo: </label>
-                        <input type="text" id="Largo" name="largo" class=" form-control-sm float-right" placeholder="Largo" required>
+                        <input type="text" id="Largo" name="largo" class=" form-control-sm float-right" placeholder="Largo">
                     </div>
                     <div class="form-group col-4">
                         <label for="Alto" class="mr-2 text-white text-left">Alto: </label>
-                        <input type="text" id="Alto" name="alto" class=" form-control-sm float-right" placeholder="Alto" required>
+                        <input type="text" id="Alto" name="alto" class=" form-control-sm float-right" placeholder="Alto">
                     </div>
                     <div class="form-group col-4">
                         <label for="Ancho" class="mr-2 text-white text-left">Ancho: </label>
-                        <input type="text" id="Ancho" name="ancho" class=" form-control-sm float-right" placeholder="Ancho" required>
+                        <input type="text" id="Ancho" name="ancho" class=" form-control-sm float-right" placeholder="Ancho">
                     </div>
                     <div class="form-group col-4">
                         <label for="PesoB" class="mr-2 text-white text-left">Peso bruto Maximo: </label>
-                        <input type="text" id="PesoB" name="peso" class=" form-control-sm float-right" placeholder="Peso bruto Maximo" required>
+                        <input type="text" id="PesoB" name="peso" class=" form-control-sm float-right" placeholder="Peso bruto Maximo">
                     </div>
                     <div class="col-2 pt-0">
                         <div class="form-check">
                             <label class="mr-2 text-white text-left " for="gridCheck">Refrigerado: </label>
-                            <input class="form-check-input float-right col-4" name="refrigerado" type="checkbox" id="gridCheck" required>
+                            <input class="form-check-input float-right col-4" name="refrigerado"type="checkbox" id="gridCheck">
                             <label class="form-check-label col-3 text-white" for="gridCheck">
                                 Si
                             </label>
@@ -110,15 +111,14 @@
                 </div>
                 <div class="form-group mb-0">
                     <button type="submit" name="AgregarUnidad" class="btn btn-sm btn-success p-1 col-0" id="Agregar">agregar</button>
-                    <button type="submit" name="Eliminar" class="btn btn-sm btn-danger p-1" id="Eliminar" disabled>Eliminar</button>
-                    <button type="submit" name="Actualizar" class="btn btn-sm btn-warning p-1" id="Actualizar" disabled>Actualizar</button>
+                    <button type="submit" name="Eliminar" class="btn btn-sm btn-danger p-1" id="Eliminar" style>Eliminar</button>
+                    <button type="submit" name="Actualizar" class="btn btn-sm btn-warning p-1" id="Actualizar">Actualizar</button>
                 </div>
                 <hr class="hr" />
                 <div class="p-0 ml-2 mb-0 row">
                     <input class="form-control mb-0 col-3 mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
                     <button class=" btn btn-sm btn-success my-2 my-sm-0 float-right mb-0" type="submit" id="Buscar">Buscar</button>
                 </div>
-
             </form>
         </div>
     </div>
@@ -135,25 +135,23 @@ if (isset($_POST['AgregarUnidad'])) {
     $ancho = $_POST['ancho'];
     $largo = $_POST['largo'];
     $peso = $_POST['peso'];
+    $refri = 0;
     if (!empty($_POST['refrigerado'])) {
         $refri = TRUE;
-    } else {
-        $refri = FALSE;
     }
 
-
-    $image = $_FILES['picture1']['name'];
+    $image_name = $_FILES['picture1']['name'];
     $tipo_imagen = $_FILES['picture1']['type'];
     $tamaño_imagen = $_FILES['picture1']['size'];
     $carpeta = $_SERVER['DOCUMENT_ROOT'] . '/Integrador/Unidades/';
-    $foto = "../Unidades/" . $image;
+    $foto = "../Unidades/" . $image_name;
 
     if ($tamaño_imagen <= 3000000) {
         if ($tipo_imagen == "image/jpeg" || $tipo_imagen == "image/jpg" || $tipo_imagen == "image/png") {
             $status = addUnidad($marca, $modelo, $placas, $numero_serie, $ejes, $largo, $ancho, $alto, $peso, $refri, $foto);
             if ($status == 1) {
                 echo "<script>alert('Se ha realizado el registro de Unidad correctamente ');</script>";
-                move_uploaded_file($_FILES['picture1']['tmp_name'], $carpeta . $image);
+                move_uploaded_file($_FILES['picture1']['tmp_name'], $carpeta . $image_name);
             } else {
                 echo "<script>alert('No se ha podido realizar el registro de Unidad ');</script>";
             }

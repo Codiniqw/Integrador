@@ -19,22 +19,22 @@
       <a class="navbar-brand col-0 text-light" href="#">SRI-A</a>
       <div class="collapse navbar-collapse col-auto" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active col-sm-3">
+          <li class="nav-item active col-auto">
             <a class="nav-link text-light active text-center" href="informes.php">Informes Administrador</a>
           </li>
-          <li class="nav-item col-lg-3">
+          <li class="nav-item col-auto">
             <a class="nav-link text-light text-center" href="registroOP.php">Registrar operador</a>
           </li>
-          <li class="nav-item col-lg-3 text-center">
+          <li class="nav-item col-auto text-center">
             <a class="nav-link text-light" href="registroUnidad.php">Registrar Unidad</a>
           </li>
-          <li class="nav-item col-lg-3 text-center">
+          <li class="nav-item col-auto text-center">
             <a class="nav-link text-light" href="asignar_viaje.php">Asignar Viajes</a>
           </li>
-          <li class="nav-item col-lg-3 text-center">
+          <li class="nav-item col-auto text-center">
             <a class="nav-link text-light" href="BitOperador.php">informes Operador</a>
           </li>
-          <li class="nav-item col-lg-3 text-right">
+          <li class="nav-item col-auto text-right">
             <a class="nav-link text-light" href="index.php">Salir</a>
           </li>
         </ul>
@@ -46,7 +46,7 @@
 <body class="body">
   <div class="container">
     <h2 class=" text-center  text-white">Asignar Viajes</h2>
-    <form action="" class=" p-3 form-enviar" id="formAsignarviaje">
+    <form action="" class=" p-3 mb-4 form-enviar" id="formAsignarviaje">
       <div class="form-group">
         <label for="Empresaqueenvia" class="mr-0 text-white text-left col-6">Empresa que envia: </label>
         <input type="text" id="Empresaqueenvia" class="form-control-sm float-right" placeholder="Empresa que envia">
