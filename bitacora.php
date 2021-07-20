@@ -36,7 +36,30 @@
         <div class="row">
             <form action="bitacora.php" method="POST" class="p-3 m-0 col-12 mb-1" id="formBitacora" enctype="multipart/form-data">
                 <div class="col-12 p-0 text-center">
-                   
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Seleccione un viaje
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> <!-- Esta seleccion deberá traer los elementos que pertenezcan a este operador y mostrar algo de informacion
+                como origen, destino unidad etc que será con la que estará relacionada esta bitacora-->
+                        <a class="dropdown-item" href="#">Mex-Qro_Motores</a>
+                        <a class="dropdown-item" href="#">Zac-NL_Vacunas</a>
+                        <a class="dropdown-item" href="#">Pue-CH_Equipos de computo</a>
+                    </div>
+                </div>
+                    <div class="form-group col-4">
+                        <label for="Origen" class="mr-2 text-black text-left">Origen: </label>
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="Destino" class="mr-2 text-black text-left">Destino: </label>
+                    </div>  
+                    <div class="form-group col-4">
+                        <label for="Unidad" class="mr-2 text-black text-left">Unidad: </label>
+                    </div>   
+                    <div class="form-group col-4">
+                        <label for="Operador" class="mr-2 text-black text-left">Operador: </label>
+                    </div>                  
+
                     <div class="form-group col-4">
                         <label for="Fecha" class="mr-2 text-white text-left">Fecha: </label>
                         <input type="text" id="Fecha" name="Fecha" class=" form-control-sm float-right" placeholder="Fecha" required>
