@@ -9,7 +9,7 @@
   session_start();
   $Usession=$_SESSION['user'];
   if ($Usession == null || $Usession=='') {
-    echo '<script> alert("inicia session  para poder comenzar"); window.location="index.html"; </script>';
+    echo '<script> alert("inicia session  para poder comenzar"); window.location="index.php"; </script>';
   }
    ?>
     <link rel="icon" href="img/delivery.png" type="image/png" size="64x64" />
