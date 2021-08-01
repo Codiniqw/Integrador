@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Informes del Operador</title>
+    <?php
+  session_start();
+  $Usession=$_SESSION['user'];
+  if ($Usession == null || $Usession=='') {
+  echo '<script> alert("inicia session  para poder comenzar"); window.location="index.php"; </script>';
+  }
+  ?>
     <link rel="icon" href="../img/delivery.png" type="image/png" size="64x64" />
     <link
       rel="stylesheet"

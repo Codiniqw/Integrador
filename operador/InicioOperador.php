@@ -4,11 +4,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Inicio Sistema de regitro</title>
-    
+    <?php
+  session_start();
+  $Usession=$_SESSION['user'];
+  if ($Usession == null || $Usession=='') {
+  echo '<script> alert("inicia session  para poder comenzar"); window.location="index.php"; </script>';
+  }
+  ?>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/styleInicio.css">
-    
+
 
 </head>
 <body>
@@ -38,7 +44,7 @@
         <form class="form-inline me-3 my-3 my-lg-0" action="" method="POST">
         <button type="sumit" name="btncerrar" href="../index.php" class="btn btn-danger">  Cerrar sesion</button>
         </form>
-        
+
       </div>
     </div>
   </nav>
@@ -67,6 +73,6 @@
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
           </div>
         </div>
-      </div>   
+      </div>
 </body>
 </html>

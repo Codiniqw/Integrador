@@ -24,7 +24,10 @@ function ValidateUser($user, $password)
         $arrayBD = mysqli_fetch_array($validation); //Convierte los datos obtenidos en cadena de texto
         mysqli_close($conex); //Termina la conexion con la BD
 
-        if (($numReg == 1) && ($password == $arrayBD['password'])  && (count_chars($password) >= 8)) { //if que valida que los datos sean iguales
+        if (($numReg == 1) && ($password == $arrayBD['password'])  && (count_chars($password) >= 8))
+         { //if que valida que los datos sean iguales
+           session_start();
+           $_SESSION['user']= $usu;
             $status = 1;
         } else {
             $status = 0;
