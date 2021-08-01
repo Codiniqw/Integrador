@@ -98,4 +98,5 @@ function ValidateOPerator($user, $password)
     die('Exception capturada: ' . $e->getMessage()); //atrapa el error en caso de que no se pueda realizar
 }
 }
+}
 ?>
