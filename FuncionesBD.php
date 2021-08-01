@@ -27,7 +27,7 @@ function ValidateUser($user, $password)
         if (($numReg == 1) && ($password == $arrayBD['password'])  && (count_chars($password) >= 8))
          { //if que valida que los datos sean iguales
            session_start();
-           $_SESSION['user']= $usu;
+           $_SESSION['user']= $user;
             $status = 1;
         } else {
             $status = 0;
