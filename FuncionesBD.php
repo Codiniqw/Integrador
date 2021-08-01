@@ -5,8 +5,9 @@ function connect()
     $Server = "localhost";
     $BD = "t_super_refrigeradores";
     $user = "root";
+    $pwd = "1234";
 
-    $conection = mysqli_connect($Server, $user, null, $BD) or die("No se pudo conectar");
+    $conection = mysqli_connect($Server, $user, $pwd, $BD) or die("No se pudo conectar");
 
     return $conection;
 }
@@ -23,10 +24,7 @@ function ValidateUser($user, $password)
         $arrayBD = mysqli_fetch_array($validation); //Convierte los datos obtenidos en cadena de texto
         mysqli_close($conex); //Termina la conexion con la BD
 
-        if (($numReg == 1) && ($password == $arrayBD['password'])  && (count_chars($password) >= 8)) {
-           //if que valida que los datos sean iguales
-           session_start();
-           $_SESSION['user']= $usu;
+        if (($numReg == 1) && ($password == $arrayBD['password'])  && (count_chars($password) >= 8)) { //if que valida que los datos sean iguales
             $status = 1;
         } else {
             $status = 0;
@@ -68,10 +66,10 @@ function consultarviaje()
     $conex = connect();
     $select = "select * from  viajes";
     try{
-    $rsViaje=mysqli_query($conex,$select);
-    mysqli_close($conex);
-    return $rsViaje;
-    } catch (Exception $e) {
-    die('Exepcion capturada: ' .$e-> getMessage());
+        $rsViaje=mysqli_query($conex,$select);
+        mysqli_close($conex);
+        return $rsViaje;
+    }catch (Exception $e) {
+    die('Exepcion capturada: '.$e-> getMessage());
 }
 }

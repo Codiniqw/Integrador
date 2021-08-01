@@ -9,18 +9,17 @@
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
+
 --
 -- Base de datos: `t_super_refrigeradores`
-
-
-CREATE DATABASE IF NOT EXISTS `t_super_refrigeradores`;
 --
--- --------------------------------------------------------
 
+-- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `admin`
@@ -34,6 +33,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
   PRIMARY KEY (`RFC`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
 -- Volcar la base de datos para la tabla `admin`
 --
 
