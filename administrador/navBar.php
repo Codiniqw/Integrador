@@ -18,9 +18,8 @@
                         <a class="nav-link text-light" href="asignar_viaje.php">Asignar Viajes</a>
                     </li>
                     <li class="nav-item col-lg-3 text-right">
-                        <button class="btn btn-danger my-2 my-sm-0" type="submit" name=btncerrar  >Cerrar</button>
+                        <a class="nav-link text-light" href="../index.php">Salir</a>
                     </li>
-
                 </ul>
             </div>
     </nav>
