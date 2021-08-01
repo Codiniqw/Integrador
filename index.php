@@ -16,7 +16,26 @@
 <body>
   <h1 class="display-3 text-center">Acceso</h1>
 
-  <div class="container container-lg">
+  <div class="container container-lg " id="admin" style="display:none">
+
+    <form action="index.php" method="POST" class="containerform">
+      <div class="col text text-center">
+        <img src="img/user1.png" alt="no se pudo cargar" width="100px" height="100px" class="mb-2 img-fluid ">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Usuario" name="txtusuario" class="form-control" />
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Contraseña" name="txtpass" class="form-control" />
+      </div>
+      <div class=" col text-center">
+        <button type="submit" name="btnEntrar" class="btn btn-success">
+          Ingresar
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="container container-lg " id="operador" style="display:block">
 
     <form action="index.php" method="POST" class="containerform">
       <div class="col text text-center">
