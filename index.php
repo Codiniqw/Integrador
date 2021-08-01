@@ -52,8 +52,11 @@
           Ingresar
         </button>
       </div>
+      <button id="btnadmin" class="btn btn-borderless-light mt-1 col text-center" type="button" onclick="admin()" style=" color:orangered;">Inicio sesion administrador</button>
     </form>
+    
   </div>
+  <script src="js/login.js"></script>
 </body>
 <?php
 require("FuncionesBD.php");
