@@ -18,11 +18,9 @@
                         <a class="nav-link text-light" href="asignar_viaje.php">Asignar Viajes</a>
                     </li>
                     <li class="nav-item col-lg-3 text-right">
-                        <a class="nav-link text-light" href="../index.php">Salir</a>
+                        <button class="btn btn-danger my-2 my-sm-0" type="submit" name=btncerrar  >Cerrar</button>
                     </li>
-                    <form class="d-flex" action="FuncionesBD.php" method='POST' >
-                    <button class="btn btn-danger my-2 my-sm-0" type="submit" name=btncerrar  >Cerrar</button>
-                    </form>
+
                 </ul>
             </div>
     </nav>
