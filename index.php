@@ -87,8 +87,8 @@ if (isset($_POST['btnloginOperador'])) {
           session_start();
           session_destroy();
           echo '<script>window.location="index.php"</script>';
-
-
+    }
+  }
 ?>
 
 </html>
