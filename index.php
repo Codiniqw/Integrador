@@ -18,7 +18,7 @@
 
   <div class="container container-lg " id="admin" style="display:none">
     <form action="index.php" method="POST" class="containerform">
-    <h4 class="text-center">login administrador</h4>
+      <h4 class="text-center">login administrador</h4>
       <div class="col text text-center">
         <img src="img/user1.png" alt="no se pudo cargar" width="100px" height="100px" class="mb-2 img-fluid ">
       </div>
@@ -29,15 +29,16 @@
         <input type="password" placeholder="Contraseña" name="txtpass" class="form-control" />
       </div>
       <div class=" col text-center">
-        <button type="submit" name="btnEntrar" class="btn btn-success">
+        <button type="submit" name="btnloginAdmin" class="btn btn-success">
           Ingresar
         </button>
       </div>
+      <button id="btnadmin" class="btn btn-borderless-light mt-1 col text-center" type="button" onclick="operador()" style=" color:orangered;">Inicio sesion operador</button>
     </form>
   </div>
   <div class="container container-lg " id="operador" style="display:block">
     <form action="index.php" method="POST" class="containerform">
-    <h4 class="text-center">Login Operador</h4>
+      <h4 class="text-center">Login Operador</h4>
       <div class="col text text-center">
         <img src="img/user1.png" alt="no se pudo cargar" width="100px" height="100px" class="mb-2 img-fluid ">
       </div>
@@ -48,19 +49,19 @@
         <input type="password" placeholder="Contraseña" name="txtpass" class="form-control" />
       </div>
       <div class=" col text-center">
-        <button type="submit" name="btnEntrar" class="btn btn-success">
+        <button type="submit" name="btnloginOperador" class="btn btn-success">
           Ingresar
         </button>
       </div>
       <button id="btnadmin" class="btn btn-borderless-light mt-1 col text-center" type="button" onclick="admin()" style=" color:orangered;">Inicio sesion administrador</button>
     </form>
-    
+
   </div>
   <script src="js/login.js"></script>
 </body>
 <?php
 require("FuncionesBD.php");
-if (isset($_POST['btnEntrar'])) {
+if (isset($_POST['btnloginAdmin'])) {
   $user = $_POST['txtusuario'];
   $pass = $_POST['txtpass'];
   $status = ValidateUser($user, $pass);
@@ -68,11 +69,21 @@ if (isset($_POST['btnEntrar'])) {
   if ($status == 1) {
     echo "<script>alert('Bienvenidos a SRI'); window.location= 'administrador/registroOP.php';</script>";
   } else {
-    echo "<script>alert('Contraseña o usuario incorrectos'); window.location= 'index.php';</script>";
+    echo "<script>alert('Contraseña o usuario incorrectos');</script>";
   }
 }
 
-
+  if (isset($_POST['btnloginOperador'])) {
+    $user = $_POST['txtusuario'];
+    $pass = $_POST['txtpass'];
+    $status = ValidateOPerator($user, $pass);
+  
+    if ($status == 1) {
+      echo "<script>alert('Bienvenidos a SRI'); window.location= 'operador/InicioOperador.php';</script>";
+    } else {
+      echo "<script>alert('Contraseña o usuario incorrectos');</script>";
+    }
+    }
 
 ?>
 
