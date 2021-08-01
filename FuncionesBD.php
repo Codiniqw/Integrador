@@ -5,8 +5,9 @@ function connect()
     $Server = "localhost";
     $BD = "t_super_refrigeradores";
     $user = "root";
+    $pwd = "1234";
 
-    $conection = mysqli_connect($Server, $user, null, $BD) or die("No se pudo conectar");
+    $conection = mysqli_connect($Server, $user, $pwd, $BD) or die("No se pudo conectar");
 
     return $conection;
 }
@@ -63,12 +64,12 @@ function addUnidad($marca, $modelo, $placa, $Num_serie, $ejes, $largo, $ancho, $
 function consultarviaje()
 {
     $conex = connect();
-    $select = "select * from  viajes"
-    try {
-    $rsViaje=mysqli_query($conex,$select);
-    mysqli_close($conex);
-return $rsViaje;
-} catch (Exception $e) {
-    die('Exepcion capturada: ' .$e-> getMessage());
+    $select = "select * from  viajes";
+    try{
+        $rsViaje=mysqli_query($conex,$select);
+        mysqli_close($conex);
+        return $rsViaje;
+    }catch (Exception $e) {
+    die('Exepcion capturada: '.$e-> getMessage());
 }
 }
