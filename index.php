@@ -84,10 +84,11 @@ if (isset($_POST['btnloginAdmin'])) {
       echo "<script>alert('Contraseña o usuario incorrectos');</script>";
     }
     }
+    // cerrar sesion
     if (isset($_POST['btncerrar'])) {
-session_start();
-session_destroy();
-echo '<script>window.location="index.html"</script>';
+      session_start();
+      session_destroy();
+      echo '<script>window.location="index.php"</script>';
 // code...
 }
 
