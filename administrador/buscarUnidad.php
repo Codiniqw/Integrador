@@ -23,21 +23,25 @@
         </div>
         <div class="row">
             <?php
-                
+                require "../FuncionesBD.php";
+                $NumSerie= $_GET['NumSerie'];
+                $consulta = busquedaOperador($RFC);
+                $datos= mysqli_fetch_array($consulta);
+                if($datos['RFC']==$RFC){
         echo "<form action='registroUnidad.php' method='POST' class='p-3 m-0 col-12 mb-1' id='formUnidad' enctype='multipart/form-data'>
                 <div class='col-12 p-0 text-center'>
                     <div class='pt-5 col-4 float-right'>
                         <div class=' form-group row-1 col-1 pl-5 ml-lg-5'>
-                            <img src='../img/delivery.png' width='150px' height='150px' class='' alt=' no se ha podido cargar la imagen'>
+                            <img src='../OperadoresIMG/{$datos['Foto']}' width='150px' height='150px' class='' alt=' no se ha podido cargar la imagen'>
                         </div>
                         <div class='form-group row-1 pt-2 text-white'>
                             <label for='picture1'>Agregar imagen: </label>
-                            <input type='file' name='picture1' class='form-control bg-transparent text-white' id='picture1' required>
+                            <input type='file' name='picture1' value='../OperadoresIMG/{$datos['Foto']}' class='form-control bg-transparent text-white' id='picture1'>
                         </div>
                     </div>
                     <div class='form-group col-4'>
                         <label for='Marca' class='mr-2 text-white text-left'>Marca: </label>
-                        <input type='text' id='Marca' name='marca' class=' form-control-sm float-right' placeholder='Marca' required>
+                        <input type='text' id='Marca' value='{$datos['Foto']}' name='marca' class=' form-control-sm float-right' placeholder='Marca' required>
                     </div>
                     <div class='form-group col-4'>
                         <label for='Modelo' class='mr-2 text-white text-left'>Modelo: </label>
@@ -84,15 +88,18 @@
                 <div class='col-12'>
                 </div>
                 <div class='form-group mb-0'>
-                    <button type='submit' name='Eliminar' class='btn btn-sm btn-danger p-1' id='Eliminar' disabled>Eliminar</button>
-                    <button type='submit' name='Actualizar' class='btn btn-sm btn-warning p-1' id='Actualizar' disabled>Actualizar</button>
+                    <button type='submit' name='Eliminar' class='btn btn-sm btn-danger p-1' id='Eliminar'>Eliminar</button>
+                    <button type='submit' name='Actualizar' class='btn btn-sm btn-warning p-1' id='Actualizar'>Actualizar</button>
                 </div>
                 <hr class='hr' />
                 <div class='p-0 ml-2 mb-0 row'>
                     <input class='form-control mb-0 col-3 mr-sm-2' type='search' placeholder='Buscar' aria-label='Search'>
-                    <button class=' btn btn-sm btn-success my-2 my-sm-0 float-right mb-0' type='submit' id='Buscar'>Buscar</button>
+                    <button class=' btn btn-sm btn-success my-2 my-sm-0 float-right mb-0' type='button' id='Buscar'>Buscar</button>
                 </div>
             </form>";
+                }else{
+                    echo "<script>alert('No se ha encontrado registro');</script>";
+                }
             ?>
         </div>
     </div>

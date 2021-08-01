@@ -13,7 +13,7 @@
   echo '<script> alert("inicia session  para poder comenzar"); window.location="index.php"; </script>';
   }
   ?>
-    <link rel="icon" href="img/delivery.png" type="image/png" size="64x64">
+    <link rel="icon" href="../img/delivery.png" type="image/png" size="64x64">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group row-1 pt-2 text-white">
                             <label for="picture1">Agregar imagen: </label>
-                            <input type="file" name="picture1" class="form-control bg-transparent text-white" id="picture1" required>
+                            <input type="file" name="picture1" class="form-control bg-transparent text-white" id="picture1" >
                         </div>
                     </div>
                     <div class="form-group col-4">
@@ -90,18 +90,16 @@
                 </div>
                 <div class="form-group mb-0">
                     <button type="submit" name="AgregarUnidad" class="btn btn-sm btn-success p-1 col-0" id="Agregar">agregar</button>
-                    <button type="submit" name="Eliminar" class="btn btn-sm btn-danger p-1" id="Eliminar" disabled>Eliminar</button>
-                    <button type="submit" name="Actualizar" class="btn btn-sm btn-warning p-1" id="Actualizar" disabled>Actualizar</button>
                 </div>
                 <hr class="hr" />
                 <div class="p-0 ml-2 mb-0 row">
-                    <input class="form-control mb-0 col-3 mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                    <button class=" btn btn-sm btn-success my-2 my-sm-0 float-right mb-0" type="submit" id="Buscar">Buscar</button>
+                    <input class="form-control mb-0 col-3 mr-sm-2" type="text" id="buscarUnidad" placeholder="Buscar" aria-label="Search">
+                    <button class=" btn btn-sm btn-success my-2 my-sm-0  float-right mb-0" onclick="buscarUnidad()" type="button" id="Buscar">Buscar</button>
                 </div>
-
             </form>
         </div>
     </div>
+    <script src="../js/buscar.js"></script>
 </body>
 <?php
 if (isset($_POST['AgregarUnidad'])) {

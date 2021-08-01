@@ -3,17 +3,13 @@
     var input = document.getElementById("buscador");
     var valor = input.value;
 
-    window.location=`buscarUnidad.php?RFC=${valor}`
+    window.location=`buscarOperador.php?RFC=${valor}`;
   }
 
-  function buscarUnidad() {
-    var boton = document.getElementById("BuscarU");
+ function buscarUnidad() {
+    var input = document.getElementById("buscarUnidad");
+    var valor = input.value;
 
-    boton.addEventListener("click", () => {
-      var input = document.getElementById("buscador");
-      var valor = input.value;
-
-      alert("El valor del campo es:" + valor);
-    });
+    window.location=`buscarUnidad.php?NumSerie=${valor}`;
   }
 

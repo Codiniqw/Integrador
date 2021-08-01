@@ -102,4 +102,15 @@ function ValidateOPerator($user, $password)
 }
 }
 
-?>
+function busquedaOperador($RFC)
+{
+    $conex = connect();
+    $select = "select * from operador where RFC='$RFC';";
+    try{
+        $registro=mysqli_query($conex,$select);
+        mysqli_close($conex);
+        return $registro;
+    }catch (Exception $e) {
+    die('Exepcion capturada: '.$e-> getMessage());
+}
+}
