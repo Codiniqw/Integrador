@@ -74,6 +74,7 @@ function consultarviaje()
     }catch (Exception $e) {
     die('Exepcion capturada: '.$e-> getMessage());
 }
+}
 // validar Operador
 function ValidateOPerator($user, $password)
 {
@@ -98,5 +99,5 @@ function ValidateOPerator($user, $password)
     die('Exception capturada: ' . $e->getMessage()); //atrapa el error en caso de que no se pueda realizar
 }
 }
-}
+
 ?>
