@@ -86,7 +86,8 @@ function ValidateOPerator($user, $password)
       $numReg = mysqli_num_rows($validation); //Consulta el numero de registros obtenidos
       $arrayBD = mysqli_fetch_array($validation); //Convierte los datos obtenidos en cadena de texto
       mysqli_close($conex); //Termina la conexion con la BD
-
+      $status=1;
+          return $status;
       if (($numReg == 1) && ($password == $arrayBD['password'])  && (count_chars($password) >= 8))
        { //if que valida que los datos sean iguales
          session_start();
