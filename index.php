@@ -43,8 +43,9 @@ if (isset($_POST['btnEntrar'])) {
   $pass = $_POST['txtpass'];
   $status = ValidateUser($user, $pass);
 
+
   if ($status == 1) {
-    echo "<script>alert('Bienvenidos a SRI'); window.location= 'administrador/registroOP.php';</script>";
+    echo "<script>alert('Bienvenidos a SRI'); window.location= 'registroOP.php';</script>";
   } else {
     echo "<script>alert('Contraseña o usuario incorrectos'); window.location= 'index.php';</script>";
   }

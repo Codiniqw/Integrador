@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Informes del Operador</title>
-    <link rel="icon" href="../img/delivery.png" type="image/png" size="64x64" />
+    <link rel="icon" href="img/delivery.png" type="image/png" size="64x64" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -23,7 +23,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <div class="container col-auto bg-dark">
       <nav class="navbar navbar-expand-lg m-0 p-0 navbar-light">
         <button
@@ -61,7 +61,7 @@
           <div class="datos col-4 float-left">
             <h3>datos</h3>
             <img
-              src="../img/user.png"
+              src="img/user.png"
               width="40%"
               height="40%"
               class="row-3"
