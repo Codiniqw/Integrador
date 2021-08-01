@@ -20,6 +20,9 @@
                     <li class="nav-item col-lg-3 text-right">
                         <a class="nav-link text-light" href="../index.php">Salir</a>
                     </li>
+                    <form class="d-flex" action="controlador.php" method='post' >
+                    <button class="btn btn-danger my-2 my-sm-0" type="submit" name=btncerrar  >Cerrar</button>
+                    </form>
                 </ul>
             </div>
     </nav>

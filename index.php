@@ -77,13 +77,19 @@ if (isset($_POST['btnloginAdmin'])) {
     $user = $_POST['txtusuario'];
     $pass = $_POST['txtpass'];
     $status = ValidateOPerator($user, $pass);
-  
+
     if ($status == 1) {
       echo "<script>alert('Bienvenidos a SRI'); window.location= 'operador/InicioOperador.php';</script>";
     } else {
       echo "<script>alert('Contraseña o usuario incorrectos');</script>";
     }
     }
+    if (isset($_POST['btncerrar'])) {
+session_start();
+session_destroy();
+echo '<script>window.location="index.html"</script>';
+// code...
+}
 
 ?>
 
