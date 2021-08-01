@@ -17,8 +17,8 @@
   <h1 class="display-3 text-center">Acceso</h1>
 
   <div class="container container-lg " id="admin" style="display:none">
-
     <form action="index.php" method="POST" class="containerform">
+    <h4 class="text-center">login administrador</h4>
       <div class="col text text-center">
         <img src="img/user1.png" alt="no se pudo cargar" width="100px" height="100px" class="mb-2 img-fluid ">
       </div>
@@ -36,8 +36,8 @@
     </form>
   </div>
   <div class="container container-lg " id="operador" style="display:block">
-
     <form action="index.php" method="POST" class="containerform">
+    <h4 class="text-center">Login Operador</h4>
       <div class="col text text-center">
         <img src="img/user1.png" alt="no se pudo cargar" width="100px" height="100px" class="mb-2 img-fluid ">
       </div>
