@@ -94,24 +94,20 @@ echo '<script> alert("inicia session  para poder comenzar"); window.location="in
           <button type="submit" name="AgregarOP" class="btn btn-sm btn-success p-1 col-0" id="Agregar">
             agregar
           </button>
-          <button type="submit" name="Eliminar" class="btn btn-sm btn-danger p-1" id="Eliminar" disabled>
-            Eliminar
-          </button>
-          <button type="submit" name="Actualizar" class="btn btn-sm btn-warning p-1" id="Actualizar" disabled>
-            Actualizar
-          </button>
         </div>
         <hr class="hr" />
         <div class="p-0 ml-2 mb-0 row">
-          <input class="form-control mb-0 col-3 mr-sm-2" type="search" name="buscador" placeholder="Buscar Operador(RFC)" aria-label="Search" />
-          <button class="btn btn-sm btn-primary my-2 my-sm-0 float-right mb-0" name="buscarOP" type="submit" id="Buscar">
+          <input class="form-control mb-0 col-3 mr-sm-2" type="search" name="buscador" id="buscador" placeholder="Buscar Operador(RFC)" aria-label="Search" />
+          <button class="btn btn-sm btn-primary my-2 my-sm-0 float-right mb-0" onclick="buscarOperador()" name="buscarOP" type="button" id="Buscar">
             Buscar
           </button>
         </div>
       </form>
+      <script src="../js/buscar.js"></script>
     </div>
   </div>
 </body>
+
 
 
 

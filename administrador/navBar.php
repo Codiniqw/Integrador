@@ -20,8 +20,8 @@
             <li class="nav-item col-lg-3 text-right">
             </li>
         </ul>
-        <form class="d-flex" action="index.php" method='POST'>
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit" name=btncerrar>Cerrar</button>
+        <form class="d-flex" class="form-inline me-3 my-3 my-lg-0" action="../index.php" method='POST'>
+            <button class="btn btn-danger my-2 my-sm-0" type="submit" name=btncerrar>Cerrar</button>
         </form>
     </div>
 </nav>

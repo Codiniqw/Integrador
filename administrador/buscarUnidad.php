@@ -22,77 +22,78 @@
             <h2 class=" text-center p-0">Registro de Unidades</h2>
         </div>
         <div class="row">
-            <form action="registroUnidad.php" method="POST" class="p-3 m-0 col-12 mb-1" id="formUnidad" enctype="multipart/form-data">
-                <div class="col-12 p-0 text-center">
-                    <div class="pt-5 col-4 float-right">
-                        <div class=" form-group row-1 col-1 pl-5 ml-lg-5">
-                            <img src="../img/delivery.png" width="150px" height="150px" class="" alt=" no se ha podido cargar la imagen">
+            <?php
+                
+        echo "<form action='registroUnidad.php' method='POST' class='p-3 m-0 col-12 mb-1' id='formUnidad' enctype='multipart/form-data'>
+                <div class='col-12 p-0 text-center'>
+                    <div class='pt-5 col-4 float-right'>
+                        <div class=' form-group row-1 col-1 pl-5 ml-lg-5'>
+                            <img src='../img/delivery.png' width='150px' height='150px' class='' alt=' no se ha podido cargar la imagen'>
                         </div>
-                        <div class="form-group row-1 pt-2 text-white">
-                            <label for="picture1">Agregar imagen: </label>
-                            <input type="file" name="picture1" class="form-control bg-transparent text-white" id="picture1" required>
+                        <div class='form-group row-1 pt-2 text-white'>
+                            <label for='picture1'>Agregar imagen: </label>
+                            <input type='file' name='picture1' class='form-control bg-transparent text-white' id='picture1' required>
                         </div>
                     </div>
-                    <div class="form-group col-4">
-                        <label for="Marca" class="mr-2 text-white text-left">Marca: </label>
-                        <input type="text" id="Marca" name="marca" class=" form-control-sm float-right" placeholder="Marca" required>
+                    <div class='form-group col-4'>
+                        <label for='Marca' class='mr-2 text-white text-left'>Marca: </label>
+                        <input type='text' id='Marca' name='marca' class=' form-control-sm float-right' placeholder='Marca' required>
                     </div>
-                    <div class="form-group col-4">
-                        <label for="Modelo" class="mr-2 text-white text-left">Modelo: </label>
-                        <input type="text" id="Modelo" name="modelo" class=" form-control-sm float-right" placeholder="Modelo" required>
+                    <div class='form-group col-4'>
+                        <label for='Modelo' class='mr-2 text-white text-left'>Modelo: </label>
+                        <input type='text' id='Modelo' name='modelo' class=' form-control-sm float-right' placeholder='Modelo' required>
                     </div>
-                    <div class="form-group col-4">
-                        <label for="Placas" class="mr-2 text-white text-left">Placas: </label>
-                        <input type="text" id="Placas" name="placas" class=" form-control-sm float-right" placeholder="Placas" required>
+                    <div class='form-group col-4'>
+                        <label for='Placas' class='mr-2 text-white text-left'>Placas: </label>
+                        <input type='text' id='Placas' name='placas' class=' form-control-sm float-right' placeholder='Placas' required>
                     </div>
-                    <div class="form-group col-4">
-                        <label for="NumSerie" class="mr-2 text-white text-left">Num. Serie: </label>
-                        <input type="text" id="NumSerie" name="numero_serie" class=" form-control-sm float-right" placeholder="Num.  Serie" required>
+                    <div class='form-group col-4'>
+                        <label for='NumSerie' class='mr-2 text-white text-left'>Num. Serie: </label>
+                        <input type='text' id='NumSerie' name='numero_serie' class=' form-control-sm float-right' placeholder='Num.  Serie' required>
                     </div>
-                    <div class="form-group col-4">
-                        <label for="ConfiguracionEje" class="mr-2 text-white text-left">Configuracion de ejes: </label>
-                        <input type="text" id="ConfiguracionEje" name="ejes" class=" form-control-sm float-right" placeholder="Configuracion de ejes" required>
+                    <div class='form-group col-4'>
+                        <label for='ConfiguracionEje' class='mr-2 text-white text-left'>Configuracion de ejes: </label>
+                        <input type='text' id='ConfiguracionEje' name='ejes' class=' form-control-sm float-right' placeholder='Configuracion de ejes' required>
                     </div>
-                    <div class="form-group col-4">
-                        <label for="Largo" class="mr-2 text-white text-left">Largo: </label>
-                        <input type="text" id="Largo" name="largo" class=" form-control-sm float-right" placeholder="Largo" required>
+                    <div class='form-group col-4'>
+                        <label for='Largo' class='mr-2 text-white text-left'>Largo: </label>
+                        <input type='text' id='Largo' name='largo' class=' form-control-sm float-right' placeholder='Largo' required>
                     </div>
-                    <div class="form-group col-4">
-                        <label for="Alto" class="mr-2 text-white text-left">Alto: </label>
-                        <input type="text" id="Alto" name="alto" class=" form-control-sm float-right" placeholder="Alto" required>
+                    <div class='form-group col-4'>
+                        <label for='Alto' class='mr-2 text-white text-left'>Alto: </label>
+                        <input type='text' id='Alto' name='alto' class=' form-control-sm float-right' placeholder='Alto' required>
                     </div>
-                    <div class="form-group col-4">
-                        <label for="Ancho" class="mr-2 text-white text-left">Ancho: </label>
-                        <input type="text" id="Ancho" name="ancho" class=" form-control-sm float-right" placeholder="Ancho" required>
+                    <div class='form-group col-4'>
+                        <label for='Ancho' class='mr-2 text-white text-left'>Ancho: </label>
+                        <input type='text' id='Ancho' name='ancho' class=' form-control-sm float-right' placeholder='Ancho' required>
                     </div>
-                    <div class="form-group col-4">
-                        <label for="PesoB" class="mr-2 text-white text-left">Peso bruto Maximo: </label>
-                        <input type="text" id="PesoB" name="peso" class=" form-control-sm float-right" placeholder="Peso bruto Maximo" required>
+                    <div class='form-group col-4'>
+                        <label for='PesoB' class='mr-2 text-white text-left'>Peso bruto Maximo: </label>
+                        <input type='text' id='PesoB' name='peso' class=' form-control-sm float-right' placeholder='Peso bruto Maximo' required>
                     </div>
-                    <div class="col-2 pt-0">
-                        <div class="form-check">
-                            <label class="mr-2 text-white text-left " for="gridCheck">Refrigerado: </label>
-                            <input class="form-check-input float-right col-4" name="refrigerado" type="checkbox" id="gridCheck" required>
-                            <label class="form-check-label col-3 text-white" for="gridCheck">
+                    <div class='col-2 pt-0'>
+                        <div class='form-check'>
+                            <label class='mr-2 text-white text-left ' for='gridCheck'>Refrigerado: </label>
+                            <input class='form-check-input float-right col-4' name='refrigerado' type='checkbox' id='gridCheck' required>
+                            <label class='form-check-label col-3 text-white' for='gridCheck'>
                                 Si
                             </label>
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class='col-12'>
                 </div>
-                <div class="form-group mb-0">
-                    <button type="submit" name="AgregarUnidad" class="btn btn-sm btn-success p-1 col-0" id="Agregar">agregar</button>
-                    <button type="submit" name="Eliminar" class="btn btn-sm btn-danger p-1" id="Eliminar" disabled>Eliminar</button>
-                    <button type="submit" name="Actualizar" class="btn btn-sm btn-warning p-1" id="Actualizar" disabled>Actualizar</button>
+                <div class='form-group mb-0'>
+                    <button type='submit' name='Eliminar' class='btn btn-sm btn-danger p-1' id='Eliminar' disabled>Eliminar</button>
+                    <button type='submit' name='Actualizar' class='btn btn-sm btn-warning p-1' id='Actualizar' disabled>Actualizar</button>
                 </div>
-                <hr class="hr" />
-                <div class="p-0 ml-2 mb-0 row">
-                    <input class="form-control mb-0 col-3 mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                    <button class=" btn btn-sm btn-success my-2 my-sm-0 float-right mb-0" type="submit" id="Buscar">Buscar</button>
+                <hr class='hr' />
+                <div class='p-0 ml-2 mb-0 row'>
+                    <input class='form-control mb-0 col-3 mr-sm-2' type='search' placeholder='Buscar' aria-label='Search'>
+                    <button class=' btn btn-sm btn-success my-2 my-sm-0 float-right mb-0' type='submit' id='Buscar'>Buscar</button>
                 </div>
-
-            </form>
+            </form>";
+            ?>
         </div>
     </div>
 </body>
