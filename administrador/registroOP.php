@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registro Operadores</title>
-  <link rel="icon" href="img/delivery.png" type="image/png" size="64x64" />
+  <link rel="icon" href="../img/delivery.png" type="image/png" size="64x64" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
   <div class="container col-auto bg-dark">
     <nav class="navbar navbar-expand-lg m-0 p-0 navbar-light">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,27 +18,24 @@
       </button>
       <a class="navbar-brand col-0 text-light" href="#">SIR-A</a>
       <div class="collapse navbar-collapse col-auto" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active col-sm-3">
-            <a class="nav-link text-light active text-center" href="informes.php">Informes Administrador</a>
-          </li>
-          <li class="nav-item col-lg-3">
-            <a class="nav-link text-light text-center" href="registroOP.php">Registrar operador</a>
-          </li>
-          <li class="nav-item col-lg-3 text-center">
-            <a class="nav-link text-light" href="registroUnidad.php">Registrar Unidad</a>
-          </li>
-          <li class="nav-item col-lg-3 text-center">
-            <a class="nav-link text-light" href="asignar_viaje.php">Asignar Viajes</a>
-          </li>
-          <li class="nav-item col-lg-3 text-center">
-            <a class="nav-link text-light" href="BitOperador.php">Informes Operador</a>
-          </li>
-          <li class="nav-item col-lg-3 text-right">
-            <a class="nav-link text-light" href="index.php">Salir</a>
-          </li>
-        </ul>
-      </div>
+                <ul class="navbar-nav">
+                    <li class="nav-item col-lg-3">
+                        <a class="nav-link text-light text-center" href="registroOP.php">Registrar operador</a>
+                    </li>
+                    <li class="nav-item col-lg-3 text-center">
+                        <a class="nav-link text-light" href="registroUnidad.php">Registrar Unidad</a>
+                    </li>
+                    <li class="nav-item col-lg-3 text-center">
+                        <a class="nav-link text-light" href="BitOperadorAd.php">Informes</a>
+                    </li>
+                    <li class="nav-item col-lg-3 text-center">
+                        <a class="nav-link text-light" href="asignar_viaje.php">Asignar Viajes</a>
+                    </li>
+                    <li class="nav-item col-lg-3 text-right">
+                        <a class="nav-link text-light" href="InicioAdmin.php">Inicio</a>
+                    </li>
+                </ul>
+            </div>
     </nav>
   </div>
 </head>
@@ -53,7 +50,7 @@
         <div class="col-12 p-0">
           <div class="pt-5 col-4 float-right">
             <div class="form-group row-1 col-1 pl-5 ml-lg-5">
-              <img src="img/user1.png" width="150px" height="150px" class="" alt=" no se ha podido cargar la imagen" />
+              <img src="../img/user1.png" width="150px" height="150px" class="" alt=" no se ha podido cargar la imagen" />
             </div>
             <div class="form-group row-1 pt-2 text-white">
               <label for="picture">Agregar imagen: </label>
@@ -137,7 +134,7 @@
 
 <?php
 if (isset($_POST['AgregarOP'])) {
-  require "FuncionesBD.php";
+  require "../FuncionesBD.php";
   $RFC = $_POST['RFC'];
   $nombre = $_POST['Nombre'];
   $apellidos = $_POST['Apellidos'];
@@ -151,7 +148,7 @@ if (isset($_POST['AgregarOP'])) {
   $image = $_FILES['picture']['name'];
   $tipo_imagen = $_FILES['picture']['type'];
   $tamaño_imagen = $_FILES['picture']['size'];
-  $carpeta = $_SERVER['DOCUMENT_ROOT'] . '/Integrador/Operadores/';
+  $carpeta = $_SERVER['DOCUMENT_ROOT'] . '/Integrador/OperadoresIMG/';
   $foto = "../Operadores/" . $image;
 
   if ($tamaño_imagen <= 3000000) {
