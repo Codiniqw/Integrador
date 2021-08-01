@@ -33,7 +33,7 @@
           Ingresar
         </button>
       </div>
-      <button id="btnadmin" class="btn btn-borderless-light mt-1 col text-center" type="button" onclick="operador()" style=" color:orangered;">Inicio sesion operador</button>
+      <button id="btnoperador" class="btn btn-borderless-light mt-1 col text-center" type="button" onclick="operador()" style=" color:orangered;">Inicio sesion operador</button>
     </form>
   </div>
   <div class="container container-lg " id="operador" style="display:block">
