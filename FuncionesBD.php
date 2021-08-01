@@ -95,6 +95,7 @@ function ValidateOPerator($user, $password)
       } else {
           $status = 0;
       }
+      return $status;
 }catch (Exception $e) {
     die('Exception capturada: ' . $e->getMessage()); //atrapa el error en caso de que no se pueda realizar
 }

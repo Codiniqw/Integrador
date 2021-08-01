@@ -73,7 +73,7 @@ if (isset($_POST['btnloginAdmin'])) {
   }
 }
 
-  if (isset($_POST['btnloginOperador'])) {
+if (isset($_POST['btnloginOperador'])) {
     $user = $_POST['txtusuario'];
     $pass = $_POST['txtpass'];
     $status = ValidateOPerator($user, $pass);
@@ -83,7 +83,7 @@ if (isset($_POST['btnloginAdmin'])) {
     } else {
       echo "<script>alert('Contraseña o usuario incorrectos');</script>";
     }
-    }
+}
 
 ?>
 
