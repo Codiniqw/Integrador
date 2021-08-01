@@ -18,7 +18,7 @@
                         <a class="nav-link text-light" href="asignar_viaje.php">Asignar Viajes</a>
                     </li>
                     <li class="nav-item col-lg-3 text-right">
-                        <a class="nav-link text-light" href="registroOP.php">Salir</a>
+                        <a class="nav-link text-light" href="../index.php">Salir</a>
                     </li>
                 </ul>
             </div>
