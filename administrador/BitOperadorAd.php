@@ -32,27 +32,7 @@
 
     <link rel="stylesheet" href="../css/style.css" />
     <div class="container col-auto bg-dark">
-      <nav class="navbar navbar-expand-lg m-0 p-0 navbar-light">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand col-0 text-light" href="#">SRI-O</a>
-        <div class="collapse navbar-collapse col-auto" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item col-12 text-center">
-              <a class="nav-link text-light" href="InicioAdmin.php">Regresar</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <?php include_once "navBar.php" ?>
     </div>
   </head>
   <body>

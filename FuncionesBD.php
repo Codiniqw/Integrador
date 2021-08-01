@@ -5,7 +5,7 @@ function connect()
     $Server = "localhost";
     $BD = "t_super_refrigeradores";
     $user = "root";
-    $pwd = "1234";
+    $pwd = "";
 
     $conection = mysqli_connect($Server, $user, $pwd, $BD) or die("No se pudo conectar");
 
