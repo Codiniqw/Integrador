@@ -122,6 +122,24 @@ function deleteOperador($RFC){
         die('Exepcion capturada: ' . $e->getMessage());
     }
 }
+function updateOperador($RFC, $nombre, $Apellidos, $NSS, $Num_Licencia, $Vigencia, $tipo_licencia, $password, $foto)
+{
+    if ($foto==null||$foto== " "|| $foto==""){
+        $cambio="";
+    }
+    else{
+        $cambio=",foto='$foto'";
+    }
+    $update = "update operador set RFC='$RFC', nombre='$nombre', apellidos='$Apellidos', NSS='$NSS', numero_licencia='$Num_Licencia', vigencia='$Vigencia', password='$password',tipo_licencia='$tipo_licencia' $cambio where RFC='$RFC' ";
+    $conection = connect();
+    try {
+        mysqli_query($conection, $update);
+        mysqli_close($conection);
+        return 1;
+    } catch (Exception $e) {
+        die('Excepcion Capturada: ' . $e->getMessage());
+    }
+}
 
 function busquedaUnidad($NumSerie)
 {

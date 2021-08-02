@@ -112,8 +112,9 @@ echo '<script> alert("inicia session  para poder comenzar"); window.location="..
 
 
 <?php
+require "../FuncionesBD.php";
 if (isset($_POST['AgregarOP'])) {
-  require "../FuncionesBD.php";
+  
   $RFC = $_POST['RFC'];
   $nombre = $_POST['Nombre'];
   $apellidos = $_POST['Apellidos'];
@@ -153,6 +154,50 @@ if (isset($_POST['AgregarOP'])) {
 
 if(isset($_POST['Eliminar'])){
   $RFC=$_POST['RFC'];
+  $status= deleteOperador($RFC);
+  if($status== 1){
+    echo "<script>alert('EL registro se ha eliminado')</script>";
+  }else{
+    echo "<script>alert('EL registro no se ha eliminado')</script>";
+  }
+
+}
+if (isset($_POST['Actualizar'])) {
+  $RFC = $_POST['RFC'];
+  $nombre = $_POST['Nombre'];
+  $apellidos = $_POST['Apellidos'];
+  $vigencia = $_POST['Vigencia'];
+  $numero_licencia = $_POST['NumLicencia'];
+  $tipo_licencia = $_POST['tipo'];
+  $password = $_POST['password'];
+  $confirm_password = $_POST['confirm_password'];
+  $NSS = $_POST['NSS'];
+
+  $image = $_FILES['picture']['name'];
+  $tipo_imagen = $_FILES['picture']['type'];
+  $tamaño_imagen = $_FILES['picture']['size'];
+  $carpeta = $_SERVER['DOCUMENT_ROOT'] . '/Integrador/OperadoresIMG/';
+  $foto = $image;
+
+  if ($tamaño_imagen <= 3000000) {
+   // if ($tipo_imagen == "image/jpeg" || $tipo_imagen == "image/jpg" || $tipo_imagen == "image/png") {
+      if ($password === $confirm_password) {
+        $status = updateOperador($RFC, $nombre, $apellidos, $NSS, $numero_licencia, $vigencia, $tipo_licencia, $password, $foto);
+        if ($status = 1) {
+          echo "<script>alert('Se ha realizado el registro Correctamente'); </script>";
+        } else {
+          echo "<script>alert('No se ha Podido realizar el registro'); </script>";
+        }
+        move_uploaded_file($_FILES['picture']['tmp_name'], $carpeta . $image);
+      } else {
+        echo "<script>alert('Las contraseñas no son iguales'); </script>";
+      }
+    //} else {
+    //  echo "<script>alert('La el archivo que intenta subir no es una imagen'); </script>";
+    //}
+  } else {
+    echo "<script>alert('La iamgen que intenta subir es demasiado grande ');</script>";
+  }
 }
 
 ?>
