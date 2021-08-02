@@ -7,7 +7,7 @@
   }
 
  function buscarUnidad() {
-    var input = document.getElementById("buscarUnidad");
+    var input = document.getElementById("buscador");
     var valor = input.value;
 
     window.location=`buscarUnidad.php?NumSerie=${valor}`;

@@ -23,10 +23,9 @@ function ValidateUser($user, $password)
         $arrayBD = mysqli_fetch_array($validation); //Convierte los datos obtenidos en cadena de texto
         mysqli_close($conex); //Termina la conexion con la BD
 
-        if (($numReg == 1) && ($password == $arrayBD['password'])  && (count_chars($password) >= 8))
-         { //if que valida que los datos sean iguales
-           session_start();
-           $_SESSION['user']= $user;
+        if (($numReg == 1) && ($password == $arrayBD['password'])  && (count_chars($password) >= 8)) { //if que valida que los datos sean iguales
+            session_start();
+            $_SESSION['user'] = $user;
             $status = 1;
         } else {
             $status = 0;
@@ -67,50 +66,61 @@ function consultarviaje()
 {
     $conex = connect();
     $select = "select * from  viajes";
-    try{
-        $rsViaje=mysqli_query($conex,$select);
+    try {
+        $rsViaje = mysqli_query($conex, $select);
         mysqli_close($conex);
         return $rsViaje;
-    }catch (Exception $e) {
-    die('Exepcion capturada: '.$e-> getMessage());
-}
+    } catch (Exception $e) {
+        die('Exepcion capturada: ' . $e->getMessage());
+    }
 }
 // validar Operador
 function ValidateOPerator($user, $password)
 {
-  $conex = connect(); //Guarda la conexion con la base de datos
-  $query = "select password from operador where RFC = '$user' "; //consulta a relizar
+    $conex = connect(); //Guarda la conexion con la base de datos
+    $query = "select password from operador where RFC = '$user' "; //consulta a relizar
 
-  try { // intenta realizar el processo
-      $validation = mysqli_query($conex, $query); //gaurda los datos obtenidos de la consulta
-      $numReg = mysqli_num_rows($validation); //Consulta el numero de registros obtenidos
-      $arrayBD = mysqli_fetch_array($validation); //Convierte los datos obtenidos en cadena de texto
-      mysqli_close($conex); //Termina la conexion con la BD
-      $status=1;
-          return $status;
-      if (($numReg == 1) && ($password == $arrayBD['password'])  && (count_chars($password) >= 8))
-       { //if que valida que los datos sean iguales
-         session_start();
-         $_SESSION['user']= $user;
-          $status = 1;
-      } else {
-          $status = 0;
-      }
-      return $status;
-}catch (Exception $e) {
-    die('Exception capturada: ' . $e->getMessage()); //atrapa el error en caso de que no se pueda realizar
-}
+    try { // intenta realizar el processo
+        $validation = mysqli_query($conex, $query); //gaurda los datos obtenidos de la consulta
+        $numReg = mysqli_num_rows($validation); //Consulta el numero de registros obtenidos
+        $arrayBD = mysqli_fetch_array($validation); //Convierte los datos obtenidos en cadena de texto
+        mysqli_close($conex); //Termina la conexion con la BD
+        $status = 1;
+        return $status;
+        if (($numReg == 1) && ($password == $arrayBD['password'])  && (count_chars($password) >= 8)) { //if que valida que los datos sean iguales
+            session_start();
+            $_SESSION['user'] = $user;
+            $status = 1;
+        } else {
+            $status = 0;
+        }
+        return $status;
+    } catch (Exception $e) {
+        die('Exception capturada: ' . $e->getMessage()); //atrapa el error en caso de que no se pueda realizar
+    }
 }
 
 function busquedaOperador($RFC)
 {
     $conex = connect();
     $select = "select * from operador where RFC='$RFC';";
-    try{
-        $registro=mysqli_query($conex,$select);
+    try {
+        $registro = mysqli_query($conex, $select);
         mysqli_close($conex);
         return $registro;
-    }catch (Exception $e) {
-    die('Exepcion capturada: '.$e-> getMessage());
+    } catch (Exception $e) {
+        die('Exepcion capturada: ' . $e->getMessage());
+    }
 }
+function busquedaUnidad($NumSerie)
+{
+    $conex = connect();
+    $select = "select * from unidad where numero_serie='$NumSerie';";
+    try {
+        $registro = mysqli_query($conex, $select);
+        mysqli_close($conex);
+        return $registro;
+    } catch (Exception $e) {
+        die('Exepcion capturada: ' . $e->getMessage());
+    }
 }

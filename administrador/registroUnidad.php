@@ -79,7 +79,7 @@
                     <div class="col-2 pt-0">
                         <div class="form-check">
                             <label class="mr-2 text-white text-left " for="gridCheck">Refrigerado: </label>
-                            <input class="form-check-input float-right col-4" name="refrigerado" type="checkbox" id="gridCheck" required>
+                            <input class="form-check-input float-right col-4" name="refrigerado" type="checkbox" id="gridCheck">
                             <label class="form-check-label col-3 text-white" for="gridCheck">
                                 Si
                             </label>
@@ -93,7 +93,7 @@
                 </div>
                 <hr class="hr" />
                 <div class="p-0 ml-2 mb-0 row">
-                    <input class="form-control mb-0 col-3 mr-sm-2" type="text" id="buscarUnidad" placeholder="Buscar" aria-label="Search">
+                    <input class="form-control mb-0 col-3 mr-sm-2" type="text" id="buscador" placeholder="Buscar" aria-label="Search">
                     <button class=" btn btn-sm btn-success my-2 my-sm-0  float-right mb-0" onclick="buscarUnidad()" type="button" id="Buscar">Buscar</button>
                 </div>
             </form>
@@ -114,9 +114,9 @@ if (isset($_POST['AgregarUnidad'])) {
     $largo = $_POST['largo'];
     $peso = $_POST['peso'];
     if (!empty($_POST['refrigerado'])) {
-        $refri = TRUE;
+        $refri = 1;
     } else {
-        $refri = FALSE;
+        $refri = 0;
     }
 
 

@@ -23,62 +23,70 @@
         </div>
         <div class="row">
             <?php
+                $refrigerado;
                 require "../FuncionesBD.php";
                 $NumSerie= $_GET['NumSerie'];
-                $consulta = busquedaOperador($RFC);
+                $consulta = busquedaUnidad($NumSerie);
                 $datos= mysqli_fetch_array($consulta);
-                if($datos['RFC']==$RFC){
+
+                if($datos['Refrigerado']==1){
+                    $refrigerado = 'checked'; 
+                }else{
+                    $refrigerado = ' ';
+                }
+
+                if($datos['numero_serie']==$NumSerie){
         echo "<form action='registroUnidad.php' method='POST' class='p-3 m-0 col-12 mb-1' id='formUnidad' enctype='multipart/form-data'>
                 <div class='col-12 p-0 text-center'>
                     <div class='pt-5 col-4 float-right'>
                         <div class=' form-group row-1 col-1 pl-5 ml-lg-5'>
-                            <img src='../OperadoresIMG/{$datos['Foto']}' width='150px' height='150px' class='' alt=' no se ha podido cargar la imagen'>
+                            <img src='../UnidadesIMG/{$datos['foto']}' width='150px' height='150px' class='' alt=' no se ha podido cargar la imagen'>
                         </div>
                         <div class='form-group row-1 pt-2 text-white'>
                             <label for='picture1'>Agregar imagen: </label>
-                            <input type='file' name='picture1' value='../OperadoresIMG/{$datos['Foto']}' class='form-control bg-transparent text-white' id='picture1'>
+                            <input type='file' name='picture1' value='../OperadoresIMG/{$datos['foto']}' class='form-control bg-transparent text-white' id='picture1'>
                         </div>
                     </div>
                     <div class='form-group col-4'>
                         <label for='Marca' class='mr-2 text-white text-left'>Marca: </label>
-                        <input type='text' id='Marca' value='{$datos['Foto']}' name='marca' class=' form-control-sm float-right' placeholder='Marca' required>
+                        <input type='text' id='Marca' value='{$datos['marca']}' name='marca' class=' form-control-sm float-right' placeholder='Marca' required>
                     </div>
                     <div class='form-group col-4'>
                         <label for='Modelo' class='mr-2 text-white text-left'>Modelo: </label>
-                        <input type='text' id='Modelo' name='modelo' class=' form-control-sm float-right' placeholder='Modelo' required>
+                        <input type='text' id='Modelo' value='{$datos['modelo']}' name='modelo' class=' form-control-sm float-right' placeholder='Modelo' required>
                     </div>
                     <div class='form-group col-4'>
                         <label for='Placas' class='mr-2 text-white text-left'>Placas: </label>
-                        <input type='text' id='Placas' name='placas' class=' form-control-sm float-right' placeholder='Placas' required>
+                        <input type='text' id='Placas' value='{$datos['placas']}' name='placas' class=' form-control-sm float-right' placeholder='Placas' required>
                     </div>
                     <div class='form-group col-4'>
                         <label for='NumSerie' class='mr-2 text-white text-left'>Num. Serie: </label>
-                        <input type='text' id='NumSerie' name='numero_serie' class=' form-control-sm float-right' placeholder='Num.  Serie' required>
+                        <input type='text' id='NumSerie' value='{$datos['numero_serie']}' name='numero_serie' class=' form-control-sm float-right' placeholder='Num.  Serie' required>
                     </div>
                     <div class='form-group col-4'>
                         <label for='ConfiguracionEje' class='mr-2 text-white text-left'>Configuracion de ejes: </label>
-                        <input type='text' id='ConfiguracionEje' name='ejes' class=' form-control-sm float-right' placeholder='Configuracion de ejes' required>
+                        <input type='text' id='ConfiguracionEje'value='{$datos['ejes']}'  name='ejes' class=' form-control-sm float-right' placeholder='Configuracion de ejes' required>
                     </div>
                     <div class='form-group col-4'>
                         <label for='Largo' class='mr-2 text-white text-left'>Largo: </label>
-                        <input type='text' id='Largo' name='largo' class=' form-control-sm float-right' placeholder='Largo' required>
+                        <input type='text' id='Largo' name='largo' value='{$datos['largo']}' class=' form-control-sm float-right' placeholder='Largo' required>
                     </div>
                     <div class='form-group col-4'>
                         <label for='Alto' class='mr-2 text-white text-left'>Alto: </label>
-                        <input type='text' id='Alto' name='alto' class=' form-control-sm float-right' placeholder='Alto' required>
+                        <input type='text' id='Alto' name='alto'value='{$datos['alto']}' class=' form-control-sm float-right' placeholder='Alto' required>
                     </div>
                     <div class='form-group col-4'>
                         <label for='Ancho' class='mr-2 text-white text-left'>Ancho: </label>
-                        <input type='text' id='Ancho' name='ancho' class=' form-control-sm float-right' placeholder='Ancho' required>
+                        <input type='text' id='Ancho' name='ancho' value='{$datos['ancho']}' class=' form-control-sm float-right' placeholder='Ancho' required>
                     </div>
                     <div class='form-group col-4'>
                         <label for='PesoB' class='mr-2 text-white text-left'>Peso bruto Maximo: </label>
-                        <input type='text' id='PesoB' name='peso' class=' form-control-sm float-right' placeholder='Peso bruto Maximo' required>
+                        <input type='text' id='PesoB' name='peso' value='{$datos['Carga_maxima']}' class=' form-control-sm float-right' placeholder='Peso bruto Maximo' required>
                     </div>
                     <div class='col-2 pt-0'>
                         <div class='form-check'>
                             <label class='mr-2 text-white text-left ' for='gridCheck'>Refrigerado: </label>
-                            <input class='form-check-input float-right col-4' name='refrigerado' type='checkbox' id='gridCheck' required>
+                            <input class='form-check-input float-right col-4' name='refrigerado' type='checkbox' id='gridCheck' $refrigerado>
                             <label class='form-check-label col-3 text-white' for='gridCheck'>
                                 Si
                             </label>
@@ -89,7 +97,8 @@
                 </div>
                 <div class='form-group mb-0'>
                     <button type='submit' name='Eliminar' class='btn btn-sm btn-danger p-1' id='Eliminar'>Eliminar</button>
-                    <button type='submit' name='Actualizar' class='btn btn-sm btn-warning p-1' id='Actualizar'>Actualizar</button>
+                    <button type='submit' name='Actualizar' class='btn btn-sm btn-success p-1' id='Actualizar'>Actualizar</button>
+                    <button type='submit' name='cancelar' class='btn btn-sm btn-warning p-1' id='cancelar'>Cancelar</button>
                 </div>
                 <hr class='hr' />
                 <div class='p-0 ml-2 mb-0 row'>
