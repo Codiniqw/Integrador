@@ -8,7 +8,7 @@
   session_start();
   $Usession=$_SESSION['user'];
   if ($Usession == null || $Usession=='') {
-  echo '<script> alert("inicia session  para poder comenzar"); window.location="index.php"; </script>';
+  echo '<script> alert("inicia session  para poder comenzar"); window.location="../index.php"; </script>';
   }
   ?>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">

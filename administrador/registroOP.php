@@ -128,7 +128,7 @@ if (isset($_POST['AgregarOP'])) {
   $tipo_imagen = $_FILES['picture']['type'];
   $tamaño_imagen = $_FILES['picture']['size'];
   $carpeta = $_SERVER['DOCUMENT_ROOT'] . '/Integrador/OperadoresIMG/';
-  $foto = "../Operadores/" . $image;
+  $foto = $image;
 
   if ($tamaño_imagen <= 3000000) {
     if ($tipo_imagen == "image/jpeg" || $tipo_imagen == "image/jpg" || $tipo_imagen == "image/png") {

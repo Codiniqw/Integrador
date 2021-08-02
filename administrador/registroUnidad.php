@@ -102,8 +102,10 @@
     <script src="../js/buscar.js"></script>
 </body>
 <?php
+require "../FuncionesBD.php";
+
 if (isset($_POST['AgregarUnidad'])) {
-    require "../FuncionesBD.php";
+    
     $marca = $_POST['marca'];
     $modelo = $_POST['modelo'];
     $numero_serie = $_POST['numero_serie'];
@@ -124,7 +126,7 @@ if (isset($_POST['AgregarUnidad'])) {
     $tipo_imagen = $_FILES['picture1']['type'];
     $tamaño_imagen = $_FILES['picture1']['size'];
     $carpeta = $_SERVER['DOCUMENT_ROOT'] . '/Integrador/UnidadesIMG/';
-    $foto = "../Unidades/" . $image;
+    $foto = $image;
 
     if ($tamaño_imagen <= 3000000) {
         if ($tipo_imagen == "image/jpeg" || $tipo_imagen == "image/jpg" || $tipo_imagen == "image/png") {
@@ -144,8 +146,54 @@ if (isset($_POST['AgregarUnidad'])) {
 }
 
 
-if (isset($_GET['buscarOP'])) {
-    $buscar = $_POST['buscador'];
+if (isset($_POST['Eliminar'])) {
+
+    $numero_serie = $_POST['NumSerie'];
+    $status = deleteUnidad($numero_serie);
+    if($status==1){
+        echo "<script>alert('se ha eliminado el registro')</script>";
+    }else{
+        echo "<script>alert('no se ha podido eliminiar el registro')</script>";
+    }
+}
+if(isset($_POST['Actualizar'])){
+    $marca = $_POST['marca'];
+    $modelo = $_POST['modelo'];
+    $numero_serie = $_POST['numero_serie'];
+    $ejes = $_POST['ejes'];
+    $placas = $_POST['placas'];
+    $alto = $_POST['alto'];
+    $ancho = $_POST['ancho'];
+    $largo = $_POST['largo'];
+    $peso = $_POST['peso'];
+    if (!empty($_POST['refrigerado'])) {
+        $refri = 1;
+    } else {
+        $refri = 0;
+    }
+
+    $image = $_FILES['picture1']['name'];
+    $tipo_imagen = $_FILES['picture1']['type'];
+    $tamaño_imagen = $_FILES['picture1']['size'];
+    $carpeta = $_SERVER['DOCUMENT_ROOT'] . '/Integrador/UnidadesIMG/';
+    $foto = $image;
+    echo $image;
+
+    if ($tamaño_imagen <= 3000000) {
+        if ($tipo_imagen == "image/jpeg" || $tipo_imagen == "image/jpg" || $tipo_imagen == "image/png") {
+            $status = updateUnidad($marca, $modelo, $placas, $numero_serie, $ejes, $largo, $ancho, $alto, $peso, $refri, $foto);
+            if ($status == 1) {
+                echo "<script>alert('Se ha realizado el registro de Unidad correctamente ');</script>";
+                move_uploaded_file($_FILES['picture1']['tmp_name'], $carpeta . $image);
+            } else {
+                echo "<script>alert('No se ha podido realizar el registro de Unidad ');</script>";
+            }
+        } else {
+            echo "<script>alert('La el archivo que intenta subir no es una imagen'); </script>";
+        }
+    } else {
+        echo "<script>alert('La iamagen que intenta subir es demasiado grande ');</script>";
+    }
 }
 
 ?>

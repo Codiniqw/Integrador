@@ -112,6 +112,18 @@ function busquedaOperador($RFC)
         die('Exepcion capturada: ' . $e->getMessage());
     }
 }
+function deleteOperador($RFC){
+    $conex = connect();
+    $delete = "delete from operador where RFC='$RFC'";
+    try{
+        mysqli_query($conex,$delete);
+        mysqli_close($conex);
+        return 1;
+    }catch (Exception $e) {
+        die('Exepcion capturada: ' . $e->getMessage());
+    }
+}
+
 function busquedaUnidad($NumSerie)
 {
     $conex = connect();
@@ -123,4 +135,30 @@ function busquedaUnidad($NumSerie)
     } catch (Exception $e) {
         die('Exepcion capturada: ' . $e->getMessage());
     }
+}
+
+function deleteUnidad($NumSerie){
+    $conex = connect();
+    $delete = "delete from unidad where numero_serie='$NumSerie'";
+    try{
+        mysqli_query($conex,$delete);
+        mysqli_close($conex);
+        return 1;
+    }catch (Exception $e) {
+        die('Exepcion capturada: ' . $e->getMessage());
+    }
+}
+
+function updateUnidad($marca, $modelo, $placa, $Num_serie, $ejes, $largo, $ancho, $alto, $peso, $refrigerado, $foto){
+    $conex = connect();
+    $update = "update unidad set  marca= '$marca', modelo= '$modelo', placas='$placa', numero_serie='$Num_serie', ejes='$ejes', largo='$largo',alto='$alto',ancho='$ancho',Carga_maxima='$peso',Refrigerado='$refrigerado',foto='$foto',placas='$placa' where numero_serie='$Num_serie'";
+
+    try{
+        mysqli_query($conex,$update);
+        mysqli_close($conex);
+        return 1;
+    }catch (Exception $e) {
+        die('Exepcion capturada: ' . $e->getMessage());
+    }
+
 }
