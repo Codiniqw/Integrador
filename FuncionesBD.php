@@ -85,8 +85,7 @@ function ValidateOPerator($user, $password)
         $numReg = mysqli_num_rows($validation); //Consulta el numero de registros obtenidos
         $arrayBD = mysqli_fetch_array($validation); //Convierte los datos obtenidos en cadena de texto
         mysqli_close($conex); //Termina la conexion con la BD
-        $status = 1;
-        return $status;
+
         if (($numReg == 1) && ($password == $arrayBD['password'])  && (count_chars($password) >= 8)) { //if que valida que los datos sean iguales
             session_start();
             $_SESSION['user'] = $user;
@@ -94,7 +93,7 @@ function ValidateOPerator($user, $password)
         } else {
             $status = 0;
         }
-        return $status;
+        return $status; // regresa validacion 0 no es correcto y 1 es correcto
     } catch (Exception $e) {
         die('Exception capturada: ' . $e->getMessage()); //atrapa el error en caso de que no se pueda realizar
     }
