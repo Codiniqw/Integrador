@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es-MX">
-
+git
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -97,7 +97,7 @@
           <button type='submit' name='Actualizar' class='btn btn-sm btn-success p-1' id='Actualizar' >
             Actualizar
           </button>
-          <button type='submit' name='Cancelar' class='btn btn-sm btn-warning p-1' id='cancelar' >
+          <button type='submit' name='Cancelar' class='btn btn-sm btn-warning p-1' id='Cancelar' >
             Cancelar
           </button>
         </div>
@@ -117,52 +117,4 @@
   </div>
   <script src="../js/buscar.js"></script>
 </body>
-
-
-
-<?php
-if (isset($_POST['AgregarOP'])) {
-  require "../FuncionesBD.php";
-  $RFC = $_POST['RFC'];
-  $nombre = $_POST['Nombre'];
-  $apellidos = $_POST['Apellidos'];
-  $vigencia = $_POST['Vigencia'];
-  $numero_licencia = $_POST['NumLicencia'];
-  $tipo_licencia = $_POST['tipo'];
-  $password = $_POST['password'];
-  $confirm_password = $_POST['confirm_password'];
-  $NSS = $_POST['NSS'];
-
-  $image = $_FILES['picture']['name'];
-  $tipo_imagen = $_FILES['picture']['type'];
-  $tamaño_imagen = $_FILES['picture']['size'];
-  $carpeta = $_SERVER['DOCUMENT_ROOT'] . '/Integrador/OperadoresIMG/';
-  $foto = "../Operadores/" . $image;
-
-  if ($tamaño_imagen <= 3000000) {
-    if ($tipo_imagen == "image/jpeg" || $tipo_imagen == "image/jpg" || $tipo_imagen == "image/png") {
-      if ($password === $confirm_password) {
-        $status = addOperador($RFC, $nombre, $apellidos, $NSS, $numero_licencia, $vigencia, $tipo_licencia, $password, $foto);
-        if ($status = 1) {
-          echo "<script>alert('Se ha realizado el registro Correctamente'); </script>";
-        } else {
-          echo "<script>alert('No se ha Podido realizar el registro'); </script>";
-        }
-        move_uploaded_file($_FILES['picture']['tmp_name'], $carpeta . $image);
-      } else {
-        echo "<script>alert('Las contraseñas no son iguales'); </script>";
-      }
-    } else {
-      echo "<script>alert('La el archivo que intenta subir no es una imagen'); </script>";
-    }
-  } else {
-    echo "<script>alert('La iamgen que intenta subir es demasiado grande ');</script>";
-  }
-}
-
-if (isset($_GET['buscarOP'])) {
-  $buscar = $_POST['buscador'];
-}
-?>
-
 </html>

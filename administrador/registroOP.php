@@ -151,11 +151,9 @@ if (isset($_POST['AgregarOP'])) {
   }
 }
 
-
-if (isset($_GET['buscarOP'])) {
-  $buscar = $_POST['buscador'];
+if(isset($_POST['Eliminar'])){
+  $RFC=$_POST['RFC'];
 }
 
 ?>
-
 </html>
