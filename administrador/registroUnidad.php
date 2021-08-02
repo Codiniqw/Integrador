@@ -159,7 +159,7 @@ if (isset($_POST['Eliminar'])) {
 if(isset($_POST['Actualizar'])){
     $marca = $_POST['marca'];
     $modelo = $_POST['modelo'];
-    $numero_serie = $_POST['numero_serie'];
+    $numero_serie = $_POST['NumSerie'];
     $ejes = $_POST['ejes'];
     $placas = $_POST['placas'];
     $alto = $_POST['alto'];
@@ -180,17 +180,17 @@ if(isset($_POST['Actualizar'])){
     echo $image;
 
     if ($tamaño_imagen <= 3000000) {
-        if ($tipo_imagen == "image/jpeg" || $tipo_imagen == "image/jpg" || $tipo_imagen == "image/png") {
+        //if ($tipo_imagen == "image/jpeg" || $tipo_imagen == "image/jpg" || $tipo_imagen == "image/png") {
             $status = updateUnidad($marca, $modelo, $placas, $numero_serie, $ejes, $largo, $ancho, $alto, $peso, $refri, $foto);
             if ($status == 1) {
-                echo "<script>alert('Se ha realizado el registro de Unidad correctamente ');</script>";
+                echo "<script>alert('Se ha actualizado el registro de Unidad correctamente ');</script>";
                 move_uploaded_file($_FILES['picture1']['tmp_name'], $carpeta . $image);
             } else {
-                echo "<script>alert('No se ha podido realizar el registro de Unidad ');</script>";
+                echo "<script>alert('No se ha podido actualizar el registro de Unidad ');</script>";
             }
-        } else {
-            echo "<script>alert('La el archivo que intenta subir no es una imagen'); </script>";
-        }
+       // } else {
+            //echo "<script>alert('La el archivo que intenta subir no es una imagen'); </script>";
+        //}
     } else {
         echo "<script>alert('La iamagen que intenta subir es demasiado grande ');</script>";
     }

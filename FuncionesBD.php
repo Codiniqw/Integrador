@@ -150,7 +150,13 @@ function deleteUnidad($NumSerie){
 
 function updateUnidad($marca, $modelo, $placa, $Num_serie, $ejes, $largo, $ancho, $alto, $peso, $refrigerado, $foto){
     $conex = connect();
-    $update = "update unidad set  marca= '$marca', modelo= '$modelo', placas='$placa', numero_serie='$Num_serie', ejes='$ejes', largo='$largo',alto='$alto',ancho='$ancho',Carga_maxima='$peso',Refrigerado='$refrigerado',foto='$foto',placas='$placa' where numero_serie='$Num_serie'";
+    if ($foto==null||$foto== " "|| $foto==""){
+        $cambio="";
+    }
+    else{
+        $cambio=",foto='$foto'";
+    }
+    $update = "update unidad set  marca= '$marca', modelo= '$modelo', placas='$placa', numero_serie='$Num_serie', ejes='$ejes', largo='$largo',alto='$alto',ancho='$ancho',Carga_maxima='$peso',Refrigerado='$refrigerado'$cambio,placas='$placa' where numero_serie='$Num_serie'";
 
     try{
         mysqli_query($conex,$update);
