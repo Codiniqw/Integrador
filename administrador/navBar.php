@@ -17,6 +17,15 @@
             <li class="nav-item col-auto text-center">
                 <a class="nav-link text-light" href="asignar_viaje.php">Asignar Viajes</a>
             </li>
+            <li class="nav-item col-auto text-center">
+                <a class="nav-link text-light" href="consultaViajes.php">Consultar Viajes</a>
+            </li>
+            <li class="nav-item col-auto text-center">
+                <a class="nav-link text-light" href="consultaOperadores.php">Consultar Operadores</a>
+            </li>
+            <li class="nav-item col-auto text-center">
+                <a class="nav-link text-light" href="consultaUnidades.php">Consultar Unidades</a>
+            </li>
             <li class="nav-item col-auto text-right">
                 <form class="d-flex" class="form-inline me-3 my-3 my-lg-0" action="../index.php" method='POST'>
                     <button class="btn btn-danger my-2 my-sm-0" type="submit" name=btncerrar>Cerrar</button>

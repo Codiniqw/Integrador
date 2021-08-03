@@ -23,6 +23,45 @@
   <?php include_once "navBar.php"; ?>
 
   <h1 class="display-4 text-center" style="color:white">Informes</h1>
+
+  <div class="formViajes">
+    <table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Empresa que envia</th>
+      <th scope="col">Empresa que recibe</th>
+      <th scope="col">Direccion de recoleccion</th>
+      <th scope="col">Dirección de entrega</th>
+      <th scope="col">Fecha de entrega</th>
+      <th scope="col">Unidad</th>
+      <th scope="col">Operador</th>
+      <th scope="col">Viaje activo</th>
+      <th scope="col">Bitacora</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+        require '../funcionesBD.php';
+        $rsViaje= consultaViajes();
+
+        while ($arrViaje=mysqli_fetch_array($rsViaje)) {
+            echo "
+            <tr>
+            <td>".$arrViaje['empresaEnvia']."</td>
+            <td>".$arrViaje['empresaRecibe']."</td>
+            <td>".$arrViaje['tipoBien']."</td>
+            <td>".$arrViaje['fechaEnvio']."</td>
+            <td>".$arrViaje['fechaEntrega']."</td>
+            <td>".$arrViaje['idUnidad']."</td>
+            <td>".$arrViaje['RFC']."</td>
+            <td>".$arrViaje['activo']."</td>
+            <td> <a><img src='../img/file.svg'>
+            </tr>";
+        } 
+    ?>
+  </tbody>
+</table>
+</div>
 </body>
 
 </html>

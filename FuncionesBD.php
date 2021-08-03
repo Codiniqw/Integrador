@@ -185,3 +185,52 @@ function updateUnidad($marca, $modelo, $placa, $Num_serie, $ejes, $largo, $ancho
     }
 
 }
+
+//Consultar Viajes en BD
+function consultaViajes(){
+    $conex=connect();
+    $selectUsu="select * from viaje";
+
+    try {
+        $rsViajes = mysqli_query($conex,$selectUsu);
+        mysqli_close($conex);
+
+        return $rsViajes;
+
+    } catch (Exception $e) {
+        die('Excepcion al consultar viajes:'.$e->getMessage());
+    }
+
+}
+//Consultar Operadores en BD
+function consultaOperadores(){
+    $conex=connect();
+    $selectUsu="select * from operador";
+
+    try {
+        $rsViajes = mysqli_query($conex,$selectUsu);
+        mysqli_close($conex);
+
+        return $rsViajes;
+
+    } catch (Exception $e) {
+        die('Excepcion al consultar Operadores:'.$e->getMessage());
+    }
+
+}
+//Consultar Operadores en BD
+function consultaUnidades(){
+    $conex=connect();
+    $selectUsu="select * from unidad";
+
+    try {
+        $rsViajes = mysqli_query($conex,$selectUsu);
+        mysqli_close($conex);
+
+        return $rsViajes;
+
+    } catch (Exception $e) {
+        die('Excepcion al consultar Unidades:'.$e->getMessage());
+    }
+
+}

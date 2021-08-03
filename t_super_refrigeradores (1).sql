@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-07-2021 a las 19:09:55
+-- Tiempo de generación: 03-08-2021 a las 02:35:11
 -- Versión del servidor: 5.5.8
 -- Versión de PHP: 5.3.5
 
@@ -38,6 +38,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`RFC`, `nombre`, `password`, `NSS`) VALUES
+('AAVE', 'Eduardo', '1234', '5155ADEGF'),
 ('EIMJ010202509', 'Jose', 'Codiniqw123', '23425234234234');
 
 -- --------------------------------------------------------
@@ -78,12 +79,14 @@ CREATE TABLE IF NOT EXISTS `incidente` (
   `ubicacion` varchar(255) NOT NULL,
   `observacion` varchar(255) NOT NULL,
   PRIMARY KEY (`idIncidente`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `incidente`
 --
 
+INSERT INTO `incidente` (`idIncidente`, `descripcion`, `fecha`, `hora`, `ubicacion`, `observacion`) VALUES
+(1, 'Choque por alcance', '2021-07-05', '10:20:00', 'Km25 Mexico-Quereatro', 'Remitido al corralón perdida total');
 
 -- --------------------------------------------------------
 
@@ -109,6 +112,7 @@ CREATE TABLE IF NOT EXISTS `operador` (
 --
 
 INSERT INTO `operador` (`RFC`, `nombre`, `apellidos`, `tipo_licencia`, `numero_licencia`, `vigencia`, `password`, `NSS`, `Foto`) VALUES
+('AAVE950101', 'Eduardo', 'Alafaro', 'A', '6456544', '2024-03-23', '1234', '26566316e65', '../Operadores/DAF.png'),
 ('EIMJ020202509', 'Jose', 'espinosa', 'B', '212342342', '2023-02-02', 'Codiniqw123', '325234243', '../Operadores/01931480.png');
 
 -- --------------------------------------------------------
@@ -138,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `unidad` (
 
 INSERT INTO `unidad` (`marca`, `modelo`, `numero_serie`, `ejes`, `largo`, `alto`, `ancho`, `Carga_maxima`, `Refrigerado`, `foto`, `placas`) VALUES
 ('Dongfeng', 'DFL1140B10-KX2V', '2352346232', 4, '9 m.', '2.6 m.', '3.92 m.', '15 TON', 1, '../Unidades/camionprueba.jpg', 'Edua4235'),
-('Dongfeng', 'DFL1140B10-KX2V', '2352346234', 4, '9 m.', '2.6 m.', '3.92 m.', '15 TON', 1, '../Unidades/camionprueba.jpg', 'edd23157');
+('Dongfeng', 'DFL1140B10-KX2V', '2352346234', 4, '9 m.', '2.6 m.', '3.92 m.', '15 TON', 1, 'DINA.jpg', 'edd23157');
 
 -- --------------------------------------------------------
 
@@ -155,15 +159,18 @@ CREATE TABLE IF NOT EXISTS `viaje` (
   `fechaEntrega` date NOT NULL,
   `idUnidad` varchar(60) CHARACTER SET utf8 NOT NULL,
   `RFC` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `activo` tinyint(1) NOT NULL,
   PRIMARY KEY (`idViaje`),
   UNIQUE KEY `idUnidad` (`idUnidad`),
   UNIQUE KEY `idOperador` (`RFC`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `viaje`
 --
 
+INSERT INTO `viaje` (`idViaje`, `empresaEnvia`, `empresaRecibe`, `tipoBien`, `fechaEnvio`, `fechaEntrega`, `idUnidad`, `RFC`, `activo`) VALUES
+(1, 'FEDEX', 'Frialsa Queretaro', 'Rollos de Tubo de cobre', '2021-07-04', '2021-07-06', '2352346234', 'EIMJ020202509', 0);
 
 --
 -- Filtros para las tablas descargadas (dump)
@@ -180,5 +187,5 @@ ALTER TABLE `bitacora`
 -- Filtros para la tabla `viaje`
 --
 ALTER TABLE `viaje`
-  ADD CONSTRAINT `viaje_ibfk_2` FOREIGN KEY (`idUnidad`) REFERENCES `unidad` (`numero_serie`),
-  ADD CONSTRAINT `viaje_ibfk_1` FOREIGN KEY (`RFC`) REFERENCES `operador` (`RFC`);
+  ADD CONSTRAINT `viaje_ibfk_1` FOREIGN KEY (`RFC`) REFERENCES `operador` (`RFC`),
+  ADD CONSTRAINT `viaje_ibfk_2` FOREIGN KEY (`idUnidad`) REFERENCES `unidad` (`numero_serie`);

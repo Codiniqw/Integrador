@@ -12,6 +12,7 @@ $Usession=$_SESSION['user'];
 if ($Usession == null || $Usession=='') {
 echo '<script> alert("inicia session  para poder comenzar"); window.location="../index.php"; </script>';
 }
+
 ?>
   <link rel="icon" href="image/delivery.png" type="image/png" size="64x64">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
